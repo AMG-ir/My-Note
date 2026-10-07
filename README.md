@@ -4,15 +4,15 @@ A personal technical knowledge base documenting my studies, hands-on practice, a
 
 Topics
 
-- Linux
-- Networking
-- Windows Server
-- Cisco
-- MikroTik
-- Virtualization
-- Cybersecurity
-- Python
-- Homelab
+· Linux
+· Networking
+· Windows Server
+· Cisco
+· MikroTik
+· Virtualization
+· Cybersecurity
+· Python
+· Homelab
 
 Purpose
 
@@ -22,14 +22,15 @@ The goal is not only to collect notes, but to document what I learn and practice
 
 Current Focus
 
-- Linux system administration
-- LPIC-2 studies
-- Networking
-- Windows Server
-- Network and system security
+· Linux system administration
+· LPIC-2 studies
+· Networking
+· Windows Server
+· Network and system security
 
 Structure
 
+```
 My-Note/
 ├── Linux/
 ├── Networking/
@@ -40,6 +41,7 @@ My-Note/
 ├── Cybersecurity/
 ├── Python/
 └── Homelab/
+```
 
 Status
 
