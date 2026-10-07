@@ -7,7 +7,15 @@ Linux Command Line
 📌 Overview
 
 The Linux command line is one of the core tools for system administration.
-This section covers basic navigation, file and directory management, privilege handling, command history, and command documentation.
+
+This section covers:
+
+- Basic navigation
+- File and directory management
+- Privilege management
+- Command history
+- Command documentation
+- Basic command discovery
 
 ---
 
@@ -51,10 +59,13 @@ Command| Purpose
 
 "mkdir" — Create a Directory
 
-mkdir directory_name
-mkdir -p parent/child
+Creates a new directory.
 
-The "-p" option creates parent directories when they do not already exist.
+mkdir directory_name
+
+The "-p" option can be used to create parent directories when needed.
+
+mkdir -p parent/child
 
 "rmdir" — Remove an Empty Directory
 
@@ -64,7 +75,12 @@ rmdir directory_name
 
 "rm" — Remove Files or Directories
 
+Remove a file:
+
 rm file.txt
+
+Remove a directory and its contents:
+
 rm -r directory_name
 
 «⚠️ Be careful with "rm -r". It can recursively remove a directory and its contents.»
@@ -74,6 +90,9 @@ rm -r directory_name
 Creates an empty file or changes the size of an existing file.
 
 truncate -s 0 file.txt
+
+For example, the following creates or resizes a file to 100 MB:
+
 truncate -s 100M file.img
 
 ---
@@ -82,7 +101,7 @@ truncate -s 100M file.img
 
 "sudo -i" — Start a Root Shell
 
-Opens a root login shell using "sudo".
+Starts a root login shell using "sudo".
 
 sudo -i
 
@@ -113,15 +132,21 @@ This executes command number "300" from the current shell's history.
 Displays the manual page for a command.
 
 man ls
+
+Another example:
+
 man systemctl
 
-Manual pages are one of the most important built-in references when working with Linux.
+Manual pages are an important built-in source of documentation in Linux.
 
 "which" — Locate an Executable
 
 Shows the executable that would be found through the current "PATH".
 
 which python3
+
+For example:
+
 which ls
 
 "whereis" — Locate Related Files
@@ -129,6 +154,9 @@ which ls
 Searches for the binary, source, and manual pages associated with a command.
 
 whereis ls
+
+Another example:
+
 whereis bash
 
 ---
@@ -137,19 +165,20 @@ whereis bash
 
 - Linux administration heavily relies on the command line.
 - Understanding paths and directory navigation is fundamental.
-- "man" is an essential source of documentation.
-- "sudo" provides controlled access to privileged operations.
-- Commands such as "rm" should be used carefully, especially with recursive options.
+- "man" provides built-in documentation for many commands.
+- "sudo" allows commands to be executed with elevated privileges.
+- Commands such as "rm" should be used carefully.
 
 ---
 
 🧪 Practice
 
-The commands in this section were studied and practiced as part of my Linux system administration learning.
+These commands were studied and practiced as part of my Linux system administration learning.
 
 Current focus: Building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
 
 ---
 
 Part of "My-Note" (../../../../README.md)
+
 Personal technical knowledge base — continuously updated.
