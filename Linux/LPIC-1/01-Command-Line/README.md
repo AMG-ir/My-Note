@@ -175,7 +175,3 @@ The commands in this section were studied and practiced as part of my Linux syst
 
 Current focus: Building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
 
----
-
-Part of "My-Note" (../../../../README.md)
-Personal technical knowledge base — continuously updated.
