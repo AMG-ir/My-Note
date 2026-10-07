@@ -1,10 +1,10 @@
-Linux Command Line
+# Linux Command Line
 
-«Notes, commands, and practical examples from my Linux system administration studies.»
+> Notes, commands, and practical examples from my Linux system administration studies.
 
 ---
 
-📌 Overview
+## 📌 Overview
 
 The Linux command line is one of the core tools for system administration.
 
@@ -19,15 +19,16 @@ This section covers:
 
 ---
 
-🧭 Navigation
+## 🧭 Navigation
 
-"pwd" — Print Working Directory
+### `pwd` — Print Working Directory
 
 Displays the absolute path of the current working directory.
 
+```bash
 pwd
 
-"ls" — List Directory Contents
+ls — List Directory Contents
 
 Lists files and directories.
 
@@ -35,12 +36,14 @@ ls
 ls -l
 ls -la
 
-Option| Description
-"-l"| Long listing format
-"-a"| Show hidden files
-"-la"| Combine both options
+Option	Description
 
-"cd" — Change Directory
+-l	Long listing format
+-a	Show hidden files
+-la	Combine both options
+
+
+cd — Change Directory
 
 Moves to another directory.
 
@@ -48,32 +51,37 @@ cd /path/to/directory
 cd ..
 cd ~
 
-Command| Purpose
-"cd /path"| Go to a specific directory
-"cd .."| Move to the parent directory
-"cd ~"| Move to the user's home directory
+Command	Purpose
+
+cd /path	Go to a specific directory
+cd ..	Move to the parent directory
+cd ~	Move to the user's home directory
+
+
 
 ---
 
 📁 Files & Directories
 
-"mkdir" — Create a Directory
+mkdir — Create a Directory
 
 Creates a new directory.
 
 mkdir directory_name
 
-The "-p" option can be used to create parent directories when needed.
+The -p option can be used to create parent directories when needed.
 
 mkdir -p parent/child
 
-"rmdir" — Remove an Empty Directory
+rmdir — Remove an Empty Directory
 
 rmdir directory_name
 
-«"rmdir" only removes empty directories.»
+> rmdir only removes empty directories.
 
-"rm" — Remove Files or Directories
+
+
+rm — Remove Files or Directories
 
 Remove a file:
 
@@ -83,35 +91,41 @@ Remove a directory and its contents:
 
 rm -r directory_name
 
-«⚠️ Be careful with "rm -r". It can recursively remove a directory and its contents.»
+> ⚠️ Be careful with rm -r. It can recursively remove a directory and its contents.
 
-"truncate" — Change File Size
+
+
+truncate — Change File Size
 
 Creates an empty file or changes the size of an existing file.
 
 truncate -s 0 file.txt
 
-For example, the following creates or resizes a file to 100 MB:
+For example:
 
 truncate -s 100M file.img
+
 
 ---
 
 🔐 Privilege Management
 
-"sudo -i" — Start a Root Shell
+sudo -i — Start a Root Shell
 
-Starts a root login shell using "sudo".
+Starts a root login shell using sudo.
 
 sudo -i
 
-«Use root privileges only when necessary.»
+> Use root privileges only when necessary.
+
+
+
 
 ---
 
 🕘 Command History
 
-"history"
+history
 
 Displays previously executed commands.
 
@@ -121,13 +135,14 @@ A specific command can be executed by its history number:
 
 !300
 
-This executes command number "300" from the current shell's history.
+This executes command number 300 from the current shell's history.
+
 
 ---
 
 📖 Getting Help
 
-"man" — Manual Pages
+man — Manual Pages
 
 Displays the manual page for a command.
 
@@ -139,9 +154,9 @@ man systemctl
 
 Manual pages are an important built-in source of documentation in Linux.
 
-"which" — Locate an Executable
+which — Locate an Executable
 
-Shows the executable that would be found through the current "PATH".
+Shows the executable that would be found through the current PATH.
 
 which python3
 
@@ -149,7 +164,7 @@ For example:
 
 which ls
 
-"whereis" — Locate Related Files
+whereis — Locate Related Files
 
 Searches for the binary, source, and manual pages associated with a command.
 
@@ -159,15 +174,22 @@ Another example:
 
 whereis bash
 
+
 ---
 
 🧠 Key Takeaways
 
-- Linux administration heavily relies on the command line.
-- Understanding paths and directory navigation is fundamental.
-- "man" provides built-in documentation for many commands.
-- "sudo" allows commands to be executed with elevated privileges.
-- Commands such as "rm" should be used carefully.
+Linux administration heavily relies on the command line.
+
+Understanding paths and directory navigation is fundamental.
+
+man provides built-in documentation for many commands.
+
+sudo allows commands to be executed with elevated privileges.
+
+Commands such as rm should be used carefully.
+
+
 
 ---
 
@@ -177,8 +199,9 @@ These commands were studied and practiced as part of my Linux system administrat
 
 Current focus: Building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
 
+
 ---
 
-Part of "My-Note" (../../../../README.md)
+Part of My-Note
 
 Personal technical knowledge base — continuously updated.
