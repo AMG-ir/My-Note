@@ -31,15 +31,15 @@ Current Focus
 Structure
 
 My-Note/
-├── Linux/
-├── Networking/
-├── Windows-Server/
-├── Cisco/
-├── MikroTik/
-├── Virtualization/
-├── Cybersecurity/
-├── Python/
-└── Homelab/
+ ├── Linux/
+ ├── Networking/
+ ├── Windows-Server/
+ ├── Cisco/
+ ├── MikroTik/
+ ├── Virtualization/
+ ├── Cybersecurity/
+ ├── Python/
+ └── Homelab/
 
 Status
 
