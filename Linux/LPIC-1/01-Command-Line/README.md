@@ -1,207 +1,137 @@
-# Linux Command Line
+Linux Command Line
 
-> Notes, commands, and practical examples from my Linux system administration studies.
+This section contains notes and practical examples related to basic Linux command-line usage.
 
----
+Navigation
 
-## 📌 Overview
+pwd
 
-The Linux command line is one of the core tools for system administration.
-
-This section covers:
-
-- Basic navigation
-- File and directory management
-- Privilege management
-- Command history
-- Command documentation
-- Basic command discovery
-
----
-
-## 🧭 Navigation
-
-### `pwd` — Print Working Directory
-
-Displays the absolute path of the current working directory.
+Displays the current working directory.
 
 ```bash
 pwd
+```
 
-ls — List Directory Contents
+ls
 
 Lists files and directories.
 
+```bash
 ls
 ls -l
 ls -la
+```
 
-Option	Description
+cd
 
--l	Long listing format
--a	Show hidden files
--la	Combine both options
+Changes the current working directory.
 
-
-cd — Change Directory
-
-Moves to another directory.
-
+```bash
 cd /path/to/directory
 cd ..
 cd ~
+```
 
-Command	Purpose
+Files and Directories
 
-cd /path	Go to a specific directory
-cd ..	Move to the parent directory
-cd ~	Move to the user's home directory
+mkdir
 
+Creates a directory.
 
-
----
-
-📁 Files & Directories
-
-mkdir — Create a Directory
-
-Creates a new directory.
-
+```bash
 mkdir directory_name
-
-The -p option can be used to create parent directories when needed.
-
 mkdir -p parent/child
+```
 
-rmdir — Remove an Empty Directory
+rmdir
 
+Removes an empty directory.
+
+```bash
 rmdir directory_name
+```
 
-> rmdir only removes empty directories.
+rm
 
+Removes files or directories.
 
-
-rm — Remove Files or Directories
-
-Remove a file:
-
+```bash
 rm file.txt
-
-Remove a directory and its contents:
-
 rm -r directory_name
+```
 
-> ⚠️ Be careful with rm -r. It can recursively remove a directory and its contents.
+«Use "rm -r" carefully because it can remove directories and their contents.»
 
-
-
-truncate — Change File Size
+truncate
 
 Creates an empty file or changes the size of an existing file.
 
+```bash
 truncate -s 0 file.txt
-
-For example:
-
 truncate -s 100M file.img
+```
 
-
----
-
-🔐 Privilege Management
-
-sudo -i — Start a Root Shell
-
-Starts a root login shell using sudo.
+Privilege Management
 
 sudo -i
 
-> Use root privileges only when necessary.
+Starts a root login shell.
 
+```bash
+sudo -i
+```
 
+Use elevated privileges only when necessary.
 
-
----
-
-🕘 Command History
+Command History
 
 history
 
 Displays previously executed commands.
 
+```bash
 history
+```
 
-A specific command can be executed by its history number:
+A specific command can also be executed from the history:
 
+```bash
 !300
+```
 
-This executes command number 300 from the current shell's history.
+This executes command number "300" from the shell history.
 
+Manual Pages
 
----
-
-📖 Getting Help
-
-man — Manual Pages
+man
 
 Displays the manual page for a command.
 
+```bash
 man ls
-
-Another example:
-
 man systemctl
+```
 
-Manual pages are an important built-in source of documentation in Linux.
+which
 
-which — Locate an Executable
+Shows the path of an executable found in the user's "PATH".
 
-Shows the executable that would be found through the current PATH.
-
+```bash
 which python3
-
-For example:
-
 which ls
+```
 
-whereis — Locate Related Files
+whereis
 
-Searches for the binary, source, and manual pages associated with a command.
+Locates the binary, source, and manual pages associated with a command.
 
+```bash
 whereis ls
-
-Another example:
-
 whereis bash
+```
 
+Notes
 
----
-
-🧠 Key Takeaways
-
-Linux administration heavily relies on the command line.
-
-Understanding paths and directory navigation is fundamental.
-
-man provides built-in documentation for many commands.
-
-sudo allows commands to be executed with elevated privileges.
-
-Commands such as rm should be used carefully.
-
-
-
----
-
-🧪 Practice
-
-These commands were studied and practiced as part of my Linux system administration learning.
-
-Current focus: Building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
-
-
----
-
-Part of My-Note
-
-Personal technical knowledge base — continuously updated.
+· Most Linux administration tasks can be performed from the command line.
+· Understanding command syntax and reading manual pages are important skills for system administration.
+· Commands should be tested in a safe environment before being used on production systems.
