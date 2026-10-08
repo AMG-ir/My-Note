@@ -1,33 +1,40 @@
-Network Security
+# 13 - Network Security
 
-Network security is the practice of protecting networks, devices, services, and data from unauthorized access, misuse, disruption, and attacks.
+Network security is the practice of protecting networks, devices, services, and data from unauthorized access, misuse, disruption, and attacks. It combines technologies, configurations, policies, and security controls.
 
-Network security combines technologies, configurations, policies, and security controls.
+## Contents
+
+- [Security Goals](#security-goals)
+- [Authentication, Authorization, and Accounting](#authentication-authorization-and-accounting)
+- [Firewall](#firewall)
+- [DMZ Security](#dmz-security)
+- [Encryption](#encryption)
+- [Hashing](#hashing)
+- [Network Attacks](#network-attacks)
+- [Defense in Depth](#defense-in-depth)
+- [Basic Network Security Practices](#basic-network-security-practices)
+- [Security Concepts Comparison](#security-concepts-comparison)
+- [Key Takeaways](#key-takeaways)
+- [Practice](#practice)
 
 ---
 
-1. Security Goals
+## Security Goals
 
-Three important goals of information security are:
+Three important goals of information security are confidentiality, integrity, and availability. These are commonly known as the CIA Triad.
 
-· Confidentiality
-· Integrity
-· Availability
+### Confidentiality
 
-These are commonly known as the CIA Triad.
-
-Confidentiality
-
-Confidentiality means preventing unauthorized people from accessing information.
+Preventing unauthorized people from accessing information.
 
 ```text
-Authorized User ─────> Data
-Unauthorized User ──X─> Data
+Authorized User ------> Data
+Unauthorized User --X-> Data
 ```
 
-Integrity
+### Integrity
 
-Integrity means protecting data from unauthorized modification.
+Protecting data from unauthorized modification.
 
 ```text
 Original Data
@@ -39,29 +46,27 @@ Protected Data
 No Unauthorized Changes
 ```
 
-Availability
+### Availability
 
-Availability means keeping systems and services accessible when they are needed.
+Keeping systems and services accessible when they are needed.
 
 ```text
-User ─────> Network ─────> Service
+User -----> Network -----> Service
                  |
-              Available
+             Available
 ```
 
 ---
 
-2. Authentication
+## Authentication, Authorization, and Accounting
 
-Authentication verifies the identity of a user or device.
+### Authentication
 
-Examples include:
+Authentication verifies the identity of a user or device. Examples include:
 
-· Username and password
-· Multi-factor authentication
-· Digital certificates
-
-The basic idea is:
+- Username and password
+- Multi-factor authentication
+- Digital certificates
 
 ```text
 User
@@ -75,13 +80,9 @@ Authentication
  +----> Invalid
 ```
 
-Authentication answers:
+Authentication answers: who are you?
 
-«Who are you?»
-
----
-
-3. Authorization
+### Authorization
 
 Authorization determines what an authenticated user or device is allowed to access.
 
@@ -96,24 +97,18 @@ Authorization
       +----> Denied
 ```
 
-Authentication identifies the user.
+Authentication identifies the user. Authorization determines what the user can do.
 
-Authorization determines what the user can do.
+### Accounting
 
----
+Accounting records and tracks activities performed by users or systems. Examples include:
 
-4. Accounting
+- Login records
+- Access records
+- System activity
+- Network activity
 
-Accounting records and tracks activities performed by users or systems.
-
-Examples include:
-
-· Login records
-· Access records
-· System activity
-· Network activity
-
-Authentication, authorization, and accounting are often considered together as AAA:
+Authentication, authorization, and accounting are often considered together as AAA.
 
 ```text
 Authentication
@@ -127,7 +122,7 @@ Accounting
 
 ---
 
-5. Firewall
+## Firewall
 
 A firewall controls network traffic according to defined rules.
 
@@ -141,23 +136,13 @@ Internal Network
 
 A firewall can allow or block traffic based on factors such as:
 
-· Source
-· Destination
-· Protocol
-· Port
-· Direction
+- Source
+- Destination
+- Protocol
+- Port
+- Direction
 
-Example:
-
-```text
-Internet ───> Firewall ───> Server
-                 |
-             Security Rule
-```
-
----
-
-6. Firewall Rules
+### Firewall Rules
 
 A firewall can contain rules such as:
 
@@ -172,7 +157,7 @@ The exact rules depend on the network architecture and security requirements.
 
 ---
 
-7. DMZ Security
+## DMZ Security
 
 A DMZ can be used to isolate public-facing services from an internal network.
 
@@ -192,7 +177,7 @@ If a public-facing service is compromised, segmentation can help reduce direct a
 
 ---
 
-8. Encryption
+## Encryption
 
 Encryption converts readable data into a protected form.
 
@@ -218,9 +203,7 @@ Decryption
 Plaintext
 ```
 
----
-
-9. Symmetric Encryption
+### Symmetric Encryption
 
 Symmetric encryption uses the same secret key for encryption and decryption.
 
@@ -232,23 +215,12 @@ Plaintext -> Encryption -> Ciphertext
 Ciphertext -> Decryption -> Plaintext
 ```
 
-Advantages
+- Advantages: fast, efficient for large amounts of data.
+- Challenge: the secret key must be securely shared between the communicating parties.
 
-· Fast
-· Efficient for large amounts of data
+### Asymmetric Encryption
 
-Challenge
-
-The secret key must be securely shared between the communicating parties.
-
----
-
-10. Asymmetric Encryption
-
-Asymmetric encryption uses a pair of keys:
-
-· Public key
-· Private key
+Asymmetric encryption uses a pair of keys: a public key and a private key.
 
 ```text
 Public Key
@@ -266,26 +238,18 @@ Private Key
 Decryption
 ```
 
-The public key can be shared, while the private key should be protected.
-
----
-
-11. Public and Private Keys
-
-A public key can be distributed to other parties.
-
-A private key should remain under the control of its owner.
+### Public and Private Keys
 
 ```text
-Public Key  ──> Can be shared
-Private Key ──> Must be protected
+Public Key  --> Can be shared
+Private Key --> Must be protected
 ```
 
 Asymmetric cryptography can be used for secure communication and digital signatures.
 
 ---
 
-12. Hashing
+## Hashing
 
 Hashing converts input data into a fixed-length output called a hash.
 
@@ -293,63 +257,44 @@ Hashing converts input data into a fixed-length output called a hash.
 Input Data
     |
     v
- Hash Function
+Hash Function
     |
     v
 Hash Value
 ```
 
-Example:
+Hashing is different from encryption because a cryptographic hash is designed as a one-way transformation. Hashing can be used for:
 
-```text
-Data
- |
- v
-SHA-256
- |
- v
-Hash
-```
+- Integrity verification
+- Password protection
+- File verification
 
-Hashing is different from encryption because a cryptographic hash is designed as a one-way transformation.
+### Hashing vs Encryption
 
-Hashing can be used for:
-
-· Integrity verification
-· Password protection
-· File verification
+| Feature       | Hashing                    | Encryption |
+|---------------|----------------------------|------------|
+| Main Purpose  | Integrity / verification   | Confidentiality |
+| Reversible    | Designed to be one-way     | Yes, with the appropriate key |
+| Uses Keys     | Normally no                | Yes |
+| Output        | Hash value                 | Ciphertext |
 
 ---
 
-13. Hashing vs Encryption
+## Network Attacks
 
-Feature Hashing Encryption
-Main Purpose Integrity / verification Confidentiality
-Reversible Designed to be one-way Yes, with the appropriate key
-Uses Keys Normally no Yes
-Output Hash value Ciphertext
+Networks can be targeted by different types of attacks. Examples include:
 
----
-
-14. Network Attacks
-
-Networks can be targeted by different types of attacks.
-
-Examples include:
-
-· Denial-of-Service attacks
-· Distributed Denial-of-Service attacks
-· Man-in-the-Middle attacks
-· Sniffing
-· Spoofing
-· Password attacks
-· Malware-based attacks
+- Denial-of-Service attacks
+- Distributed Denial-of-Service attacks
+- Man-in-the-Middle attacks
+- Sniffing
+- Spoofing
+- Password attacks
+- Malware-based attacks
 
 The appropriate defense depends on the attack and network architecture.
 
----
-
-15. Denial of Service
+### Denial of Service
 
 A Denial-of-Service (DoS) attack attempts to make a service or system unavailable.
 
@@ -360,34 +305,29 @@ Attack Traffic
    Server
       |
       X
-   Service
-Unavailable
+Service Unavailable
 ```
 
 A Distributed Denial-of-Service (DDoS) attack uses multiple sources to generate attack traffic.
 
 ```text
-Attacker 1 ──┐
-Attacker 2 ──┼──> Target
-Attacker 3 ──┤
-Attacker 4 ──┘
+Attacker 1 --+
+Attacker 2 --+--> Target
+Attacker 3 --+
+Attacker 4 --+
 ```
 
----
-
-16. Man-in-the-Middle
+### Man-in-the-Middle
 
 A Man-in-the-Middle (MitM) attack occurs when an attacker positions themselves between communicating parties and attempts to intercept or manipulate communication.
 
 ```text
-User ─────> Attacker ─────> Server
+User -----> Attacker -----> Server
 ```
 
 Encryption and authentication can help protect communications against MitM attacks.
 
----
-
-17. Sniffing
+### Sniffing
 
 Sniffing refers to capturing and analyzing network traffic.
 
@@ -403,23 +343,19 @@ Traffic Analysis
 
 Unencrypted traffic is especially vulnerable to being read if an attacker can capture it.
 
----
+### Spoofing
 
-18. Spoofing
+Spoofing involves pretending to be another device, user, or network identity. Examples include:
 
-Spoofing involves pretending to be another device, user, or network identity.
-
-Examples include:
-
-· IP spoofing
-· MAC spoofing
-· Email spoofing
+- IP spoofing
+- MAC spoofing
+- Email spoofing
 
 The attacker attempts to make traffic appear to originate from a trusted source.
 
 ---
 
-19. Defense in Depth
+## Defense in Depth
 
 Defense in depth means using multiple security controls instead of relying on a single security mechanism.
 
@@ -441,71 +377,74 @@ If one security control fails, other controls can still provide protection.
 
 ---
 
-20. Basic Network Security Practices
+## Basic Network Security Practices
 
-Important security practices include:
-
-· Use strong authentication.
-· Protect private keys and credentials.
-· Apply appropriate firewall rules.
-· Segment sensitive networks.
-· Encrypt sensitive communications.
-· Monitor network activity.
-· Keep systems and services appropriately maintained.
-· Limit unnecessary network access.
-· Use secure protocols where possible.
+- Use strong authentication.
+- Protect private keys and credentials.
+- Apply appropriate firewall rules.
+- Segment sensitive networks.
+- Encrypt sensitive communications.
+- Monitor network activity.
+- Keep systems and services appropriately maintained.
+- Limit unnecessary network access.
+- Use secure protocols where possible.
 
 ---
 
-Security Concepts Comparison
+## Security Concepts Comparison
 
-Concept Main Purpose
-Authentication Verify identity
-Authorization Control access
-Accounting Record activity
-Firewall Filter network traffic
-Encryption Protect confidentiality
-Hashing Verify data / protect stored credentials
-Network Segmentation Isolate network areas
-DMZ Isolate public-facing services
-
----
-
-Key Takeaways
-
-· Network security protects systems, networks, services, and data.
-· The CIA Triad consists of confidentiality, integrity, and availability.
-· Authentication verifies identity.
-· Authorization determines access permissions.
-· Accounting records activity.
-· Firewalls control network traffic according to security rules.
-· DMZs can isolate public-facing services.
-· Symmetric encryption uses one shared secret key.
-· Asymmetric encryption uses public and private keys.
-· Hashing is primarily used for integrity and verification.
-· DoS attacks attempt to make services unavailable.
-· DDoS attacks use multiple sources.
-· MitM attacks target communication between parties.
-· Sniffing involves capturing network traffic.
-· Spoofing involves falsifying an identity or source.
-· Defense in depth uses multiple security controls.
+| Concept              | Main Purpose |
+|----------------------|--------------|
+| Authentication       | Verify identity |
+| Authorization        | Control access |
+| Accounting           | Record activity |
+| Firewall             | Filter network traffic |
+| Encryption           | Protect confidentiality |
+| Hashing              | Verify data / protect stored credentials |
+| Network Segmentation | Isolate network areas |
+| DMZ                  | Isolate public-facing services |
 
 ---
 
-Practice
+## Key Takeaways
 
-1. What are the three components of the CIA Triad?
-2. What is the difference between authentication and authorization?
-3. What does AAA stand for?
-4. What is the purpose of a firewall?
-5. What is the purpose of a DMZ?
-6. Explain the difference between symmetric and asymmetric encryption.
-7. What is the difference between a public key and a private key?
-8. What is hashing used for?
-9. Explain the difference between hashing and encryption.
-10. What is a DoS attack?
-11. What is the difference between DoS and DDoS?
-12. What is a Man-in-the-Middle attack?
-13. What is network sniffing?
-14. What is spoofing?
-15. Explain the idea of defense in depth.
+- Network security protects systems, networks, services, and data.
+- The CIA Triad consists of confidentiality, integrity, and availability.
+- Authentication verifies identity.
+- Authorization determines access permissions.
+- Accounting records activity.
+- Firewalls control network traffic according to security rules.
+- DMZs can isolate public-facing services.
+- Symmetric encryption uses one shared secret key.
+- Asymmetric encryption uses public and private keys.
+- Hashing is primarily used for integrity and verification.
+- DoS attacks attempt to make services unavailable.
+- DDoS attacks use multiple sources.
+- MitM attacks target communication between parties.
+- Sniffing involves capturing network traffic.
+- Spoofing involves falsifying an identity or source.
+- Defense in depth uses multiple security controls.
+
+---
+
+## Practice
+
+- What are the three components of the CIA Triad?
+- What is the difference between authentication and authorization?
+- What does AAA stand for?
+- What is the purpose of a firewall?
+- What is the purpose of a DMZ?
+- Explain the difference between symmetric and asymmetric encryption.
+- What is the difference between a public key and a private key?
+- What is hashing used for?
+- Explain the difference between hashing and encryption.
+- What is a DoS attack?
+- What is the difference between DoS and DDoS?
+- What is a Man-in-the-Middle attack?
+- What is network sniffing?
+- What is spoofing?
+- Explain the idea of defense in depth.
+
+---
+
+Part of My-Note. Personal technical knowledge base, continuously updated.
