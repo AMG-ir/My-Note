@@ -1,27 +1,34 @@
-Linux Command Line
+# 01 - Command Line
 
-«Notes, commands, and practical examples from my Linux system administration studies.»
+Notes, commands, and practical examples from my Linux system administration studies.
+
+## Overview
+
+The Linux command line is one of the core tools for system administration. This section covers basic navigation, file and directory management, privilege handling, command history, and command documentation.
+
+## Contents
+
+- [Navigation](#navigation)
+- [Files and Directories](#files-and-directories)
+- [Privilege Management](#privilege-management)
+- [Command History](#command-history)
+- [Getting Help](#getting-help)
+- [Key Takeaways](#key-takeaways)
+- [Practice](#practice)
 
 ---
 
-📌 Overview
+## Navigation
 
-The Linux command line is one of the core tools for system administration.
-This section covers basic navigation, file and directory management, privilege handling, command history, and command documentation.
+### pwd
 
----
-
-🧭 Navigation
-
-pwd — Print Working Directory
-
-Displays the absolute path of the current working directory.
+Prints the absolute path of the current working directory.
 
 ```bash
 pwd
 ```
 
-ls — List Directory Contents
+### ls
 
 Lists files and directories.
 
@@ -31,14 +38,15 @@ ls -l
 ls -la
 ```
 
-Option Description
--l Long listing format
--a Show hidden files
--la Combine both options
+| Option | Description |
+|--------|-------------|
+| `-l`   | Long listing format |
+| `-a`   | Show hidden files |
+| `-la`  | Combine both options |
 
-cd — Change Directory
+### cd
 
-Moves to another directory.
+Changes the current directory.
 
 ```bash
 cd /path/to/directory
@@ -46,42 +54,49 @@ cd ..
 cd ~
 ```
 
-Command Purpose
-cd /path Go to a specific directory
-cd .. Move to the parent directory
-cd ~ Move to the user's home directory
+| Command    | Purpose |
+|------------|---------|
+| `cd /path` | Go to a specific directory |
+| `cd ..`    | Move to the parent directory |
+| `cd ~`     | Move to the user's home directory |
 
 ---
 
-📁 Files & Directories
+## Files and Directories
 
-mkdir — Create a Directory
+### mkdir
+
+Creates a directory.
 
 ```bash
 mkdir directory_name
 mkdir -p parent/child
 ```
 
-The -p option creates parent directories when they do not already exist.
+The `-p` option creates parent directories when they do not already exist.
 
-rmdir — Remove an Empty Directory
+### rmdir
+
+Removes an empty directory.
 
 ```bash
 rmdir directory_name
 ```
 
-«"rmdir" only removes empty directories.»
+> **Note:** `rmdir` only removes empty directories.
 
-rm — Remove Files or Directories
+### rm
+
+Removes files or directories.
 
 ```bash
 rm file.txt
 rm -r directory_name
 ```
 
-«⚠️ Be careful with "rm -r". It can recursively remove a directory and its contents.»
+> **Warning:** Be careful with `rm -r`. It recursively removes a directory and its contents.
 
-truncate — Change File Size
+### truncate
 
 Creates an empty file or changes the size of an existing file.
 
@@ -92,23 +107,23 @@ truncate -s 100M file.img
 
 ---
 
-🔐 Privilege Management
+## Privilege Management
 
-sudo -i — Start a Root Shell
+### sudo -i
 
-Opens a root login shell using sudo.
+Opens a root login shell using `sudo`.
 
 ```bash
 sudo -i
 ```
 
-«Use root privileges only when necessary.»
+> **Note:** Use root privileges only when necessary.
 
 ---
 
-🕘 Command History
+## Command History
 
-history
+### history
 
 Displays previously executed commands.
 
@@ -122,13 +137,13 @@ A specific command can be executed by its history number:
 !300
 ```
 
-This executes command number "300" from the current shell's history.
+This executes command number 300 from the current shell's history.
 
 ---
 
-📖 Getting Help
+## Getting Help
 
-man — Manual Pages
+### man
 
 Displays the manual page for a command.
 
@@ -139,16 +154,16 @@ man systemctl
 
 Manual pages are one of the most important built-in references when working with Linux.
 
-which — Locate an Executable
+### which
 
-Shows the executable that would be found through the current PATH.
+Shows the executable that would be found through the current `PATH`.
 
 ```bash
 which python3
 which ls
 ```
 
-whereis — Locate Related Files
+### whereis
 
 Searches for the binary, source, and manual pages associated with a command.
 
@@ -159,19 +174,16 @@ whereis bash
 
 ---
 
-🧠 Key Takeaways
+## Key Takeaways
 
-· Linux administration heavily relies on the command line.
-· Understanding paths and directory navigation is fundamental.
-· man is an essential source of documentation.
-· sudo provides controlled access to privileged operations.
-· Commands such as rm should be used carefully, especially with recursive options.
+- Linux administration relies heavily on the command line.
+- Understanding paths and directory navigation is fundamental.
+- `man` is an essential source of documentation.
+- `sudo` provides controlled access to privileged operations.
+- Commands such as `rm` should be used carefully, especially with recursive options.
 
----
-
-🧪 Practice
+## Practice
 
 The commands in this section were studied and practiced as part of my Linux system administration learning.
 
-Current focus: Building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
-
+Current focus: building confidence with everyday command-line operations and understanding how Linux commands behave in practical environments.
