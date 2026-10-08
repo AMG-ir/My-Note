@@ -1,20 +1,33 @@
-Systemd
+# 06 - Systemd
 
 This section covers the basic concepts and commands used to manage services and system processes with systemd.
 
-Overview
+## Overview
 
-systemd is the system and service manager used by many modern Linux distributions.
+`systemd` is the system and service manager used by many modern Linux distributions. It manages services and other system units and can control their state during system operation.
 
-It manages services and other system units and can control their state during system operation.
+The main command used to interact with systemd is `systemctl`.
 
-The main command used to interact with systemd is systemctl.
+## Contents
+
+- [systemctl](#systemctl)
+- [Service Management](#service-management)
+- [Checking Service State](#checking-service-state)
+- [Listing Units](#listing-units)
+- [Unit Files](#unit-files)
+- [journalctl](#journalctl)
+- [Combining systemctl and journalctl](#combining-systemctl-and-journalctl)
+- [Common Service Management Commands](#common-service-management-commands)
+- [Common Journal Commands](#common-journal-commands)
+- [Practical Examples](#practical-examples)
+- [Troubleshooting Workflow](#troubleshooting-workflow)
+- [Key Takeaways](#key-takeaways)
 
 ---
 
-systemctl
+## systemctl
 
-systemctl is used to manage and inspect systemd services and units.
+`systemctl` is used to manage and inspect systemd services and units.
 
 Basic syntax:
 
@@ -24,9 +37,11 @@ systemctl [command] [unit]
 
 ---
 
-Checking Service Status
+## Service Management
 
-Use systemctl status to check the current status of a service.
+### Checking Service Status
+
+Use `systemctl status` to check the current status of a service.
 
 ```bash
 systemctl status service-name
@@ -40,11 +55,7 @@ systemctl status ssh
 
 The output provides information about the service, including whether it is currently running.
 
----
-
-Starting a Service
-
-Use start to start a service.
+### Starting a Service
 
 ```bash
 sudo systemctl start service-name
@@ -58,11 +69,7 @@ sudo systemctl start ssh
 
 Starting a service affects its current state.
 
----
-
-Stopping a Service
-
-Use stop to stop a running service.
+### Stopping a Service
 
 ```bash
 sudo systemctl stop service-name
@@ -74,11 +81,9 @@ Example:
 sudo systemctl stop ssh
 ```
 
----
+### Restarting a Service
 
-Restarting a Service
-
-Use restart to stop and start a service again.
+Stops and starts a service again.
 
 ```bash
 sudo systemctl restart service-name
@@ -92,9 +97,7 @@ sudo systemctl restart ssh
 
 Restarting a service is useful when a configuration change needs to be applied.
 
----
-
-Enabling a Service
+### Enabling a Service
 
 A service can be enabled so that it starts automatically during system boot.
 
@@ -108,11 +111,9 @@ Example:
 sudo systemctl enable ssh
 ```
 
----
+### Disabling a Service
 
-Disabling a Service
-
-Use disable to prevent a service from being automatically started during boot.
+Prevents a service from being automatically started during boot.
 
 ```bash
 sudo systemctl disable service-name
@@ -124,9 +125,7 @@ Example:
 sudo systemctl disable ssh
 ```
 
----
-
-Enable and Start
+### Enable and Start
 
 A service can be enabled and started at the same time.
 
@@ -140,9 +139,7 @@ Example:
 sudo systemctl enable --now ssh
 ```
 
----
-
-Disable and Stop
+### Disable and Stop
 
 A service can be disabled and stopped at the same time.
 
@@ -156,11 +153,9 @@ Example:
 sudo systemctl disable --now ssh
 ```
 
----
+### Masking a Service
 
-Masking a Service
-
-mask prevents a service from being started.
+`mask` prevents a service from being started.
 
 ```bash
 sudo systemctl mask service-name
@@ -172,13 +167,11 @@ Example:
 sudo systemctl mask ssh
 ```
 
-A masked service cannot normally be started until it is unmasked.
+> **Note:** A masked service cannot normally be started until it is unmasked.
 
----
+### Unmasking a Service
 
-Unmasking a Service
-
-Use unmask to remove the mask from a service.
+Removes the mask from a service.
 
 ```bash
 sudo systemctl unmask service-name
@@ -192,9 +185,9 @@ sudo systemctl unmask ssh
 
 ---
 
-Checking Whether a Service Is Enabled
+## Checking Service State
 
-Use:
+### Checking Whether a Service Is Enabled
 
 ```bash
 systemctl is-enabled service-name
@@ -206,11 +199,7 @@ Example:
 systemctl is-enabled ssh
 ```
 
----
-
-Checking Whether a Service Is Active
-
-Use:
+### Checking Whether a Service Is Active
 
 ```bash
 systemctl is-active service-name
@@ -224,9 +213,9 @@ systemctl is-active ssh
 
 ---
 
-Listing Units
+## Listing Units
 
-systemctl can be used to view systemd units.
+`systemctl` can be used to view systemd units.
 
 ```bash
 systemctl list-units
@@ -234,11 +223,7 @@ systemctl list-units
 
 The output shows currently loaded units.
 
----
-
-Listing Service Units
-
-To list service units:
+To list only service units:
 
 ```bash
 systemctl list-units --type=service
@@ -246,25 +231,17 @@ systemctl list-units --type=service
 
 ---
 
-Unit Files
+## Unit Files
 
-systemd uses unit files to define how different units are managed.
+systemd uses unit files to define how different units are managed. Service unit files commonly use the `.service` extension.
 
-Service unit files commonly use the .service extension.
-
-Example:
-
-```
+```text
 example.service
 ```
 
 Unit files contain configuration information used by systemd.
 
----
-
-Viewing a Unit File
-
-Use:
+### Viewing a Unit File
 
 ```bash
 systemctl cat service-name
@@ -278,9 +255,7 @@ systemctl cat ssh
 
 This displays the unit file configuration used by the service.
 
----
-
-Reloading systemd Configuration
+### Reloading systemd Configuration
 
 When unit files are changed, systemd can reload its configuration with:
 
@@ -288,13 +263,11 @@ When unit files are changed, systemd can reload its configuration with:
 sudo systemctl daemon-reload
 ```
 
-This makes systemd reload the unit file configuration.
-
 ---
 
-journalctl
+## journalctl
 
-journalctl is used to view logs collected by the systemd journal.
+`journalctl` is used to view logs collected by the systemd journal.
 
 Basic usage:
 
@@ -302,9 +275,7 @@ Basic usage:
 journalctl
 ```
 
----
-
-Viewing Recent Logs
+### Viewing Recent Logs
 
 ```bash
 journalctl -n
@@ -312,11 +283,9 @@ journalctl -n
 
 This displays recent journal entries.
 
----
+### Following Logs
 
-Following Logs
-
-Use -f to follow new log entries as they are generated.
+Use `-f` to follow new log entries as they are generated.
 
 ```bash
 journalctl -f
@@ -324,11 +293,9 @@ journalctl -f
 
 This is useful when monitoring a service while it is running.
 
----
+### Viewing Logs for a Service
 
-Viewing Logs for a Service
-
-Use -u to display logs for a specific unit.
+Use `-u` to display logs for a specific unit.
 
 ```bash
 journalctl -u service-name
@@ -348,15 +315,15 @@ journalctl -u ssh -f
 
 ---
 
-Combining systemctl and journalctl
+## Combining systemctl and journalctl
 
-systemctl can be used to check the current state of a service:
+`systemctl` can be used to check the current state of a service:
 
 ```bash
 systemctl status ssh
 ```
 
-journalctl can then be used to inspect its logs:
+`journalctl` can then be used to inspect its logs:
 
 ```bash
 journalctl -u ssh
@@ -366,98 +333,100 @@ This combination is useful when troubleshooting service problems.
 
 ---
 
-Common Service Management Commands
+## Common Service Management Commands
 
-Command Purpose
-systemctl status Check service status
-systemctl start Start a service
-systemctl stop Stop a service
-systemctl restart Restart a service
-systemctl enable Enable a service at boot
-systemctl disable Disable a service at boot
-systemctl mask Prevent a service from being started
-systemctl unmask Remove a service mask
-systemctl is-enabled Check whether a service is enabled
-systemctl is-active Check whether a service is active
-systemctl list-units List loaded units
-systemctl cat Display a unit file
-systemctl daemon-reload Reload systemd unit configuration
-
----
-
-Common Journal Commands
-
-Command Purpose
-journalctl View system journal logs
-journalctl -n View recent log entries
-journalctl -f Follow new log entries
-journalctl -u View logs for a specific unit
+| Command                       | Purpose |
+|-------------------------------|---------|
+| `systemctl status`            | Check service status |
+| `systemctl start`             | Start a service |
+| `systemctl stop`              | Stop a service |
+| `systemctl restart`           | Restart a service |
+| `systemctl enable`            | Enable a service at boot |
+| `systemctl disable`           | Disable a service at boot |
+| `systemctl mask`              | Prevent a service from being started |
+| `systemctl unmask`            | Remove a service mask |
+| `systemctl is-enabled`        | Check whether a service is enabled |
+| `systemctl is-active`         | Check whether a service is active |
+| `systemctl list-units`        | List loaded units |
+| `systemctl cat`               | Display a unit file |
+| `systemctl daemon-reload`     | Reload systemd unit configuration |
 
 ---
 
-Practical Examples
+## Common Journal Commands
 
-Check a Service
+| Command          | Purpose |
+|------------------|---------|
+| `journalctl`     | View system journal logs |
+| `journalctl -n`  | View recent log entries |
+| `journalctl -f`  | Follow new log entries |
+| `journalctl -u`  | View logs for a specific unit |
+
+---
+
+## Practical Examples
+
+### Check a Service
 
 ```bash
 systemctl status ssh
 ```
 
-Start a Service
+### Start a Service
 
 ```bash
 sudo systemctl start ssh
 ```
 
-Stop a Service
+### Stop a Service
 
 ```bash
 sudo systemctl stop ssh
 ```
 
-Restart a Service
+### Restart a Service
 
 ```bash
 sudo systemctl restart ssh
 ```
 
-Enable a Service
+### Enable a Service
 
 ```bash
 sudo systemctl enable ssh
 ```
 
-Disable a Service
+### Disable a Service
 
 ```bash
 sudo systemctl disable ssh
 ```
 
-Mask a Service
+### Mask a Service
 
 ```bash
 sudo systemctl mask ssh
 ```
 
-Unmask a Service
+### Unmask a Service
 
 ```bash
 sudo systemctl unmask ssh
 ```
 
-View Service Logs
+### View Service Logs
 
 ```bash
 journalctl -u ssh
 ```
 
-Follow Service Logs
+### Follow Service Logs
 
 ```bash
 journalctl -u ssh -f
 ```
 
-View a Unit File
+### View a Unit File
 
 ```bash
 systemctl cat ssh
@@ -465,43 +434,47 @@ systemctl cat ssh
 
 ---
 
-Troubleshooting Workflow
+## Troubleshooting Workflow
 
 When a service is not working, a basic workflow is:
 
-1. Check the Service Status
+1. Check the service status:
 
-```bash
-systemctl status service-name
-```
+   ```bash
+   systemctl status service-name
+   ```
 
-2. Check the Service Logs
+2. Check the service logs:
 
-```bash
-journalctl -u service-name
-```
+   ```bash
+   journalctl -u service-name
+   ```
 
-3. Restart the Service
+3. Restart the service:
 
-```bash
-sudo systemctl restart service-name
-```
+   ```bash
+   sudo systemctl restart service-name
+   ```
 
-4. Check the Status Again
+4. Check the status again:
 
-```bash
-systemctl status service-name
-```
+   ```bash
+   systemctl status service-name
+   ```
 
 ---
 
-Key Takeaways
+## Key Takeaways
 
-· systemd manages services and system units.
-· systemctl is used to control and inspect services.
-· start, stop, and restart control the current service state.
-· enable and disable control whether a service starts automatically.
-· mask prevents a service from being started.
-· journalctl is used to view systemd journal logs.
-· systemctl status and journalctl are useful together when troubleshooting services.
-· Unit files define how systemd manages services and other units.
+- systemd manages services and system units.
+- `systemctl` is used to control and inspect services.
+- `start`, `stop`, and `restart` control the current service state.
+- `enable` and `disable` control whether a service starts automatically.
+- `mask` prevents a service from being started.
+- `journalctl` is used to view systemd journal logs.
+- `systemctl status` and `journalctl` are useful together when troubleshooting services.
+- Unit files define how systemd manages services and other units.
+
+---
+
+Part of My-Note. Personal technical knowledge base, continuously updated.
