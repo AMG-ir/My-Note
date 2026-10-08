@@ -1,112 +1,122 @@
-Networking Fundamentals
+# 01 - Networking Fundamentals
 
 This section covers the fundamental concepts required to understand computer networks and how networked devices communicate.
 
-1. What Is a Network?
+## Contents
+
+- [What Is a Network](#what-is-a-network)
+- [Network Communication](#network-communication)
+- [Hosts and Nodes](#hosts-and-nodes)
+- [Client and Server](#client-and-server)
+- [Point-to-Point Communication](#point-to-point-communication)
+- [Internet, Intranet, and Extranet](#internet-intranet-and-extranet)
+- [Network Architecture](#network-architecture)
+- [Network Resources](#network-resources)
+- [Network Communication Models](#network-communication-models)
+- [Network Devices](#network-devices)
+- [Local and Remote Communication](#local-and-remote-communication)
+- [Basic Network Structure](#basic-network-structure)
+- [Network Communication Fundamentals](#network-communication-fundamentals)
+- [Key Takeaways](#key-takeaways)
+- [Practice](#practice)
+
+---
+
+## What Is a Network
 
 A computer network is a group of connected devices that can communicate and exchange data with each other.
 
 Networked devices can include:
 
-· Computers
-· Servers
-· Routers
-· Switches
-· Network printers
-· Wireless devices
-· Other network-connected systems
+- Computers
+- Servers
+- Routers
+- Switches
+- Network printers
+- Wireless devices
+- Other network-connected systems
 
 The purpose of networking is to allow devices to communicate and share resources and information.
 
 ---
 
-2. Network Communication
+## Network Communication
 
-Network communication is the process of exchanging data between devices.
-
-A basic communication path can be represented as:
+Network communication is the process of exchanging data between devices. A basic communication path can be represented as:
 
 ```text
-Source → Network → Destination
+Source -> Network -> Destination
 ```
 
 For example:
 
 ```text
-Computer A → Switch → Router → Network → Server
+Computer A -> Switch -> Router -> Network -> Server
 ```
 
 The exact path depends on the network architecture and the devices involved.
 
 ---
 
-3. Hosts and Nodes
+## Hosts and Nodes
 
-A host is a device connected to a network that can send or receive data.
+A host is a device connected to a network that can send or receive data. Examples include:
 
-Examples include:
-
-· Computers
-· Servers
-· Smartphones
-· Network printers
+- Computers
+- Servers
+- Smartphones
+- Network printers
 
 A node is a device or connection point that participates in a network.
 
-The terms host and node can overlap, but they are not always interchangeable in every networking context.
+> **Note:** The terms host and node can overlap, but they are not always interchangeable in every networking context.
 
 ---
 
-4. Client and Server
+## Client and Server
 
-Client
+### Client
 
-A client is a device or application that requests a service or resource.
+A client is a device or application that requests a service or resource. Examples:
 
-Examples:
+- A web browser requesting a web page
+- A computer requesting a file from a server
 
-· A web browser requesting a web page
-· A computer requesting a file from a server
+### Server
 
-Server
+A server provides services or resources to clients. Examples:
 
-A server provides services or resources to clients.
-
-Examples:
-
-· Web server
-· File server
-· DNS server
-· Mail server
+- Web server
+- File server
+- DNS server
+- Mail server
 
 A basic client-server model looks like:
 
 ```text
-Client → Request → Server
-Client ← Response ← Server
+Client -> Request  -> Server
+Client <- Response <- Server
 ```
 
 ---
 
-5. Point-to-Point Communication
+## Point-to-Point Communication
 
 Point-to-point communication is a direct communication relationship between two endpoints.
 
 ```text
-Device A ───────── Device B
+Device A --------- Device B
 ```
 
-The communication path is between the two endpoints rather than being shared among multiple endpoints.
-
-Point-to-point connections can be used in different networking technologies and environments.
+The communication path is between the two endpoints rather than being shared among multiple endpoints. Point-to-point connections can be used in different networking technologies and environments.
 
 ---
 
-6. Internet
+## Internet, Intranet, and Extranet
 
-The Internet is a global network of interconnected networks.
+### Internet
 
-It connects networks and devices around the world and allows them to communicate using standardized networking protocols.
+The Internet is a global network of interconnected networks. It connects networks and devices around the world and allows them to communicate using standardized networking protocols.
 
 A simplified representation:
 
@@ -117,26 +127,20 @@ Local Network
     Router
       |
       v
-  Internet
+   Internet
       |
       v
 Remote Network
 ```
 
----
+### Intranet
 
-7. Intranet
+An intranet is a private network used within an organization. It can provide internal services and resources to authorized users, such as:
 
-An intranet is a private network used within an organization.
-
-It can provide internal services and resources to authorized users.
-
-Examples include:
-
-· Internal websites
-· Internal applications
-· Shared resources
-· Internal communication systems
+- Internal websites
+- Internal applications
+- Shared resources
+- Internal communication systems
 
 A simplified structure:
 
@@ -153,28 +157,30 @@ Internal Network
 
 An intranet is generally not intended to provide unrestricted public access.
 
----
+### Extranet
 
-8. Extranet
+An extranet extends selected resources or services of a private network to authorized external users or organizations. For example, a company may provide selected services to:
 
-An extranet extends selected resources or services of a private network to authorized external users or organizations.
-
-For example, a company may provide selected services to:
-
-· Business partners
-· Suppliers
-· Customers
-· External organizations
+- Business partners
+- Suppliers
+- Customers
+- External organizations
 
 The important concept is controlled access to selected private resources.
 
+### Comparison
+
+| Type     | Description |
+|----------|-------------|
+| Internet | Global network of interconnected networks |
+| Intranet | Private network used within an organization |
+| Extranet | Controlled access to selected private resources for external users |
+
 ---
 
-9. Network Architecture
+## Network Architecture
 
-Network architecture describes how network devices, systems, services, and communication paths are organized.
-
-A network can contain different components such as:
+Network architecture describes how network devices, systems, services, and communication paths are organized. A network can contain different components such as:
 
 ```text
 Clients
@@ -192,74 +198,71 @@ The architecture depends on the requirements of the network.
 
 ---
 
-10. Network Resources
+## Network Resources
 
-Networking allows devices to access and share resources.
+Networking allows devices to access and share resources. Examples include:
 
-Examples include:
-
-· Files
-· Applications
-· Internet access
-· Printers
-· Servers
-· Network services
+- Files
+- Applications
+- Internet access
+- Printers
+- Servers
+- Network services
 
 Resource sharing is one of the fundamental purposes of computer networking.
 
 ---
 
-11. Network Communication Models
+## Network Communication Models
 
 Different network environments can use different communication models.
 
-Client-Server
+### Client-Server
 
 A client requests services from a server.
 
 ```text
-Client 1 ──┐
-Client 2 ──┼──> Server
-Client 3 ──┘
+Client 1 --+
+Client 2 --+--> Server
+Client 3 --+
 ```
 
-Peer-to-Peer
+### Peer-to-Peer
 
 Devices can communicate directly with each other without requiring a dedicated central server for every service.
 
 ```text
-Device A ─── Device B
-    \          /
+Device A --- Device B
      \        /
+      \      /
       Device C
 ```
 
 ---
 
-12. Network Devices
+## Network Devices
 
-Networks use different devices for different purposes.
+Networks use different devices for different purposes. Common examples include:
 
-Common examples include:
-
-Device Basic Role
-NIC Provides network connectivity to a device
-Switch Connects devices within a network
-Router Connects different networks
-Bridge Connects network segments
-Gateway Provides a connection between different networks or systems
-Firewall Controls network traffic based on security rules
-Access Point Provides wireless network connectivity
+| Device       | Basic Role |
+|--------------|------------|
+| NIC          | Provides network connectivity to a device |
+| Switch       | Connects devices within a network |
+| Router       | Connects different networks |
+| Bridge       | Connects network segments |
+| Gateway      | Provides a connection between different networks or systems |
+| Firewall     | Controls network traffic based on security rules |
+| Access Point | Provides wireless network connectivity |
 
 The detailed operation of these devices is covered in the Network Devices section.
 
 ---
 
-13. Local and Remote Communication
+## Local and Remote Communication
 
 Communication can occur between devices on the same local network or between devices on different networks.
 
-Local Communication
+### Local Communication
 
 ```text
 Computer A
@@ -269,7 +272,7 @@ Computer A
 Computer B
 ```
 
-Communication Between Networks
+### Communication Between Networks
 
 ```text
 Computer A
@@ -291,91 +294,93 @@ Routers are used when communication needs to pass between different networks.
 
 ---
 
-14. Basic Network Structure
+## Basic Network Structure
 
 A simple network can contain:
 
 ```text
-              Internet
-              |
-           Router
-              |
-           Switch
-         /    |    \
-        /     |     \
-   Client   Server   Client
+            Internet
+               |
+            Router
+               |
+            Switch
+          /    |    \
+         /     |     \
+    Client   Server   Client
 ```
 
 Each component has a different role in communication.
 
 ---
 
-15. Network Communication Fundamentals
+## Network Communication Fundamentals
 
 Several basic concepts are important when studying networking:
 
-· Devices need a way to communicate.
-· Communication requires agreed-upon rules and protocols.
-· Different devices can have different roles.
-· Networks can be connected to other networks.
-· Network devices control or forward traffic according to their function.
-· Network communication can occur locally or across multiple networks.
+- Devices need a way to communicate.
+- Communication requires agreed-upon rules and protocols.
+- Different devices can have different roles.
+- Networks can be connected to other networks.
+- Network devices control or forward traffic according to their function.
+- Network communication can occur locally or across multiple networks.
 
 ---
 
-Key Takeaways
+## Key Takeaways
 
-· A network connects devices so they can communicate and share resources.
-· Hosts and nodes participate in network communication.
-· Clients request services or resources.
-· Servers provide services or resources.
-· Point-to-point communication connects two endpoints.
-· The Internet is a global network of interconnected networks.
-· An intranet is a private internal network.
-· An extranet provides controlled access to selected private resources for external users.
-· Network architecture describes how network components are organized.
-· Switches, routers, bridges, gateways, and firewalls have different roles in a network.
+- A network connects devices so they can communicate and share resources.
+- Hosts and nodes participate in network communication.
+- Clients request services or resources.
+- Servers provide services or resources.
+- Point-to-point communication connects two endpoints.
+- The Internet is a global network of interconnected networks.
+- An intranet is a private internal network.
+- An extranet provides controlled access to selected private resources for external users.
+- Network architecture describes how network components are organized.
+- Switches, routers, bridges, gateways, and firewalls have different roles in a network.
 
 ---
 
-Practice
+## Practice
 
-Practice 1
-
-Identify the client and server in the following communication:
+### Identify the Client and Server
 
 ```text
-Computer → Web Service
+Computer -> Web Service
 ```
 
-Practice 2
+### Identify Point-to-Point Communication
 
-Identify whether the following represents point-to-point communication:
+Does the following represent point-to-point communication?
 
 ```text
-Device A ───────── Device B
+Device A --------- Device B
 ```
 
-Practice 3
+### Identify Local or Inter-Network Communication
 
-Identify whether the following is a local or inter-network communication path:
+Is the following a local or inter-network communication path?
 
 ```text
-Computer A → Switch → Computer B
+Computer A -> Switch -> Computer B
 ```
 
-Practice 4
+### Identify Device Roles
 
-Identify the role of each device:
+What is the role of each device?
 
 ```text
-Client → Switch → Router → Internet
+Client -> Switch -> Router -> Internet
 ```
 
-Practice 5
+### Explain the Differences
 
 Explain the difference between:
 
-· Internet
-· Intranet
-· Extranet
+- Internet
+- Intranet
+- Extranet
+
+---
+
+Part of My-Note. Personal technical knowledge base, continuously updated.
