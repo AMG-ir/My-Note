@@ -1,145 +1,128 @@
-Transmission Modes
+# 07 - Transmission Modes
 
 Transmission mode describes the direction in which data can flow between communicating devices.
 
+## Overview
+
 The main transmission modes are:
 
-· Simplex
-· Half-Duplex
-· Full-Duplex
+- Simplex
+- Half-Duplex
+- Full-Duplex
+
+## Contents
+
+- [Simplex](#simplex)
+- [Half-Duplex](#half-duplex)
+- [Full-Duplex](#full-duplex)
+- [Comparison](#comparison)
+- [Key Takeaways](#key-takeaways)
+- [Practice](#practice)
 
 ---
 
-1. Simplex
+## Simplex
 
 In simplex communication, data can travel in only one direction.
 
 ```text
-Sender ───────────────> Receiver
+Sender ---------------> Receiver
 ```
 
 The receiver cannot send data back through the same communication path.
 
-Characteristics
+**Characteristics**
 
-· One-way communication
-· No return communication
-· Simple communication model
+- One-way communication
+- No return communication
+- Simple communication model
 
-Examples
+**Examples**
 
-· Traditional television broadcasting
-· Radio broadcasting
-· Keyboard-to-computer communication
+- Traditional television broadcasting
+- Radio broadcasting
+- Keyboard-to-computer communication
 
 ---
 
-2. Half-Duplex
+## Half-Duplex
 
 In half-duplex communication, data can travel in both directions, but not at the same time.
 
 ```text
-Device A ───────────────> Device B
+Device A ---------------> Device B
 
-Device A <─────────────── Device B
+Device A <--------------- Device B
 ```
 
 The direction of communication changes when the other device needs to transmit.
 
-Characteristics
+**Characteristics**
 
-· Two-way communication
-· Only one direction at a time
-· Both devices can transmit and receive
+- Two-way communication
+- Only one direction at a time
+- Both devices can transmit and receive
 
-Examples
+**Examples**
 
-· Walkie-talkies
-· Some older shared communication systems
+- Walkie-talkies
+- Some older shared communication systems
 
 ---
 
-3. Full-Duplex
+## Full-Duplex
 
 In full-duplex communication, data can travel in both directions at the same time.
 
 ```text
-Device A ───────────────> Device B
-Device A <─────────────── Device B
+Device A ---------------> Device B
+Device A <--------------- Device B
 ```
 
 Both devices can transmit and receive simultaneously.
 
-Characteristics
+**Characteristics**
 
-· Two-way communication
-· Simultaneous transmission and reception
-· More efficient communication
+- Two-way communication
+- Simultaneous transmission and reception
+- More efficient communication
 
-Examples
+**Examples**
 
-· Telephone conversations
-· Modern switched Ethernet communication
-
----
-
-Comparison
-
-Feature Simplex Half-Duplex Full-Duplex
-Communication Direction One-way Two-way Two-way
-Simultaneous Communication No No Yes
-Return Communication No Yes Yes
-Example TV Broadcast Walkie-Talkie Telephone
+- Telephone conversations
+- Modern switched Ethernet communication
 
 ---
 
-Simplex vs Half-Duplex vs Full-Duplex
+## Comparison
 
-Simplex
-
-```text
-A ───────────> B
-```
-
-Only A can send data.
-
-Half-Duplex
-
-```text
-A ───────────> B
-A <─────────── B
-```
-
-Both can send, but not simultaneously.
-
-Full-Duplex
-
-```text
-A ───────────> B
-A <─────────── B
-```
-
-Both can send simultaneously.
+| Feature                    | Simplex      | Half-Duplex  | Full-Duplex |
+|----------------------------|--------------|--------------|-------------|
+| Communication Direction    | One-way      | Two-way      | Two-way |
+| Simultaneous Communication | No           | No           | Yes |
+| Return Communication       | No           | Yes          | Yes |
+| Example                    | TV broadcast | Walkie-talkie | Telephone |
 
 ---
 
-Key Takeaways
+## Key Takeaways
 
-· Simplex provides one-way communication.
-· Half-duplex provides two-way communication, but only one direction at a time.
-· Full-duplex provides simultaneous two-way communication.
-· Transmission mode describes the direction and timing of data communication.
+- Simplex provides one-way communication.
+- Half-duplex provides two-way communication, but only one direction at a time.
+- Full-duplex provides simultaneous two-way communication.
+- Transmission mode describes the direction and timing of data communication.
 
 ---
 
-Practice
+## Practice
 
-1. Define simplex communication.
-2. Define half-duplex communication.
-3. Define full-duplex communication.
-4. What is the main difference between half-duplex and full-duplex?
-5. Give one example of each transmission mode.
-6. Identify the transmission mode:
-   · Walkie-talkie
-   · Television broadcast
-   · Telephone call
+- Define simplex communication.
+- Define half-duplex communication.
+- Define full-duplex communication.
+- What is the main difference between half-duplex and full-duplex?
+- Give one example of each transmission mode.
+- Identify the transmission mode of a walkie-talkie, a television broadcast, and a telephone call.
+
+---
+
+Part of My-Note. Personal technical knowledge base, continuously updated.
