@@ -1,60 +1,59 @@
-Users and Groups
+# 04 - Users and Groups
 
 This section covers Linux user and group management, including user information, account files, creating and modifying users and groups, and managing passwords.
 
-Overview
+## Overview
 
-Linux is a multi-user operating system. Users and groups are used to manage accounts and organize access to system resources.
+Linux is a multi-user operating system. Users and groups are used to manage accounts and organize access to system resources. User and group information is stored in specific files under `/etc`.
 
-User and group information is stored in specific files under /etc.
+## Contents
+
+- [User Information](#user-information)
+- [Important Account Files](#important-account-files)
+- [Creating Users](#creating-users)
+- [Modifying Users](#modifying-users)
+- [Groups](#groups)
+- [Password Management](#password-management)
+- [Useful Commands](#useful-commands)
+- [Important Files](#important-files)
+- [Practice](#practice)
+- [Key Takeaways](#key-takeaways)
 
 ---
 
-User Information
+## User Information
 
-id
+### id
 
 Displays information about the current user or a specified user.
 
 ```bash
 id
-```
-
-Example:
-
-```bash
 id username
 ```
 
 The output includes information such as:
 
-· User ID (UID)
-· Group ID (GID)
-· Groups the user belongs to
+- User ID (UID)
+- Group ID (GID)
+- Groups the user belongs to
 
----
-
-groups
+### groups
 
 Displays the groups that a user belongs to.
 
 ```bash
 groups
-```
-
-Example:
-
-```bash
 groups username
 ```
 
 ---
 
-Important Account Files
+## Important Account Files
 
 Linux stores user and group information in several files.
 
-/etc/passwd
+### /etc/passwd
 
 Contains information about local user accounts.
 
@@ -64,15 +63,13 @@ cat /etc/passwd
 
 A typical entry contains fields such as:
 
-```
+```text
 username:x:UID:GID:comment:home_directory:login_shell
 ```
 
-The fields are separated by :.
+The fields are separated by `:`.
 
----
-
-/etc/group
+### /etc/group
 
 Contains information about groups on the system.
 
@@ -82,13 +79,11 @@ cat /etc/group
 
 A typical entry contains:
 
-```
+```text
 groupname:x:GID:members
 ```
 
----
-
-/etc/shadow
+### /etc/shadow
 
 Stores password-related information for local user accounts.
 
@@ -96,13 +91,13 @@ Stores password-related information for local user accounts.
 sudo cat /etc/shadow
 ```
 
-This file contains sensitive account information and normally requires elevated privileges to read.
+> **Note:** This file contains sensitive account information and normally requires elevated privileges to read.
 
 ---
 
-Creating Users
+## Creating Users
 
-adduser
+### adduser
 
 Creates a new user account.
 
@@ -110,11 +105,9 @@ Creates a new user account.
 sudo adduser username
 ```
 
-adduser provides an interactive process for creating the account and setting basic user information.
+`adduser` provides an interactive process for creating the account and setting basic user information.
 
----
-
-useradd
+### useradd
 
 Creates a user account.
 
@@ -122,39 +115,33 @@ Creates a user account.
 sudo useradd username
 ```
 
-Unlike adduser, useradd is a lower-level command and is commonly used with additional options when creating accounts.
+Unlike `adduser`, `useradd` is a lower-level command and is commonly used with additional options when creating accounts.
 
 ---
 
-Modifying Users
+## Modifying Users
 
-usermod
+### usermod
 
-Used to modify an existing user account.
+Modifies an existing user account.
 
 ```bash
 sudo usermod [options] username
 ```
 
-The command can be used to change properties of an existing user account.
-
-Example:
+The command can be used to change properties of an existing user account. For example, to add a user to an additional group:
 
 ```bash
 sudo usermod -aG groupname username
 ```
 
-This adds the user to an additional group.
-
 ---
 
-Groups
+## Groups
 
-Groups provide a way to organize users.
+Groups provide a way to organize users. A user can belong to one or more groups.
 
-A user can belong to one or more groups.
-
-groupadd
+### groupadd
 
 Creates a new group.
 
@@ -162,9 +149,7 @@ Creates a new group.
 sudo groupadd groupname
 ```
 
----
-
-groupdel
+### groupdel
 
 Deletes an existing group.
 
@@ -174,11 +159,11 @@ sudo groupdel groupname
 
 ---
 
-Password Management
+## Password Management
 
-passwd
+### passwd
 
-Used to set or change a user's password.
+Sets or changes a user's password.
 
 For the current user:
 
@@ -194,82 +179,84 @@ sudo passwd username
 
 ---
 
-Useful Commands
+## Useful Commands
 
-Command Purpose
-id Display user and group information
-groups Display a user's groups
-adduser Create a user interactively
-useradd Create a user
-usermod Modify a user
-groupadd Create a group
-groupdel Delete a group
-passwd Set or change a password
-
----
-
-Important Files
-
-File Purpose
-/etc/passwd User account information
-/etc/group Group information
-/etc/shadow Password-related account information
+| Command    | Purpose |
+|------------|---------|
+| `id`       | Display user and group information |
+| `groups`   | Display a user's groups |
+| `adduser`  | Create a user interactively |
+| `useradd`  | Create a user |
+| `usermod`  | Modify a user |
+| `groupadd` | Create a group |
+| `groupdel` | Delete a group |
+| `passwd`   | Set or change a password |
 
 ---
 
-Practice
+## Important Files
+
+| File          | Purpose |
+|---------------|---------|
+| `/etc/passwd` | User account information |
+| `/etc/group`  | Group information |
+| `/etc/shadow` | Password-related account information |
+
+---
+
+## Practice
 
 The following exercises can be used to practice the concepts covered in this section.
 
-Check Current User Information
+### Check Current User Information
 
 ```bash
 id
 ```
 
-Check Group Membership
+### Check Group Membership
 
 ```bash
 groups
 ```
 
-Create a User
+### Create a User
 
 ```bash
 sudo adduser testuser
 ```
 
-Check the User
+### Check the User
 
 ```bash
 id testuser
 ```
 
-Create a Group
+### Create a Group
 
 ```bash
 sudo groupadd testgroup
 ```
 
-Add the User to the Group
+### Add the User to the Group
 
 ```bash
 sudo usermod -aG testgroup testuser
 ```
 
-Check Group Membership Again
+### Check Group Membership Again
 
 ```bash
 groups testuser
 ```
 
-Change the User Password
+### Change the User Password
 
 ```bash
 sudo passwd testuser
 ```
 
-Remove the Test Group
+### Remove the Test Group
 
 ```bash
 sudo groupdel testgroup
@@ -277,12 +264,16 @@ sudo groupdel testgroup
 
 ---
 
-Key Takeaways
+## Key Takeaways
 
-· Linux supports multiple users and groups.
-· id and groups can be used to inspect user and group membership.
-· /etc/passwd, /etc/group, and /etc/shadow contain important account information.
-· adduser and useradd can be used to create users.
-· usermod is used to modify existing users.
-· groupadd and groupdel manage groups.
-· passwd is used to manage user passwords.
+- Linux supports multiple users and groups.
+- `id` and `groups` can be used to inspect user and group membership.
+- `/etc/passwd`, `/etc/group`, and `/etc/shadow` contain important account information.
+- `adduser` and `useradd` can be used to create users.
+- `usermod` is used to modify existing users.
+- `groupadd` and `groupdel` manage groups.
+- `passwd` is used to manage user passwords.
+
+---
+
+Part of My-Note. Personal technical knowledge base, continuously updated.
