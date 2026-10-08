@@ -6,27 +6,24 @@ Topics
 
 · Linux
 · Networking
-· Windows Server
 · Cisco
-· MikroTik
-· Virtualization
-· Cybersecurity
-· Python
 · Homelab
 
 Purpose
 
-This repository is a work in progress and serves as a personal record of the technologies, concepts, commands, and practical exercises I learn throughout my studies.
+This repository is a personal record of the technologies, concepts, commands, and practical work I learn throughout my studies.
 
-The goal is not only to collect notes, but to document what I learn and practice over time.
+The goal is not only to collect notes, but to document what I actually learn, practice, and build over time.
+
+My-Note is focused on accuracy and continuous learning rather than trying to document everything about IT.
 
 Current Focus
 
 · Linux system administration
 · LPIC-2 studies
 · Networking
-· Windows Server
-· Network and system security
+· Cisco
+· Practical networking and system administration
 
 Structure
 
@@ -34,14 +31,19 @@ Structure
 My-Note/
 ├── Linux/
 ├── Networking/
-├── Windows-Server/
 ├── Cisco/
-├── MikroTik/
-├── Virtualization/
-├── Cybersecurity/
-├── Python/
 └── Homelab/
 ```
+
+Homelab
+
+Practical experiments and projects involving areas such as Windows Server, virtualization, MikroTik, Python, networking, and security will be documented under "Homelab" as they are actually performed.
+
+Documentation Principle
+
+The content of this repository reflects my actual learning and hands-on experience.
+
+Topics, commands, and concepts that I have not yet studied or practiced are not presented as completed knowledge.
 
 Status
 
