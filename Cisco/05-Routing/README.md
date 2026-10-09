@@ -1,39 +1,52 @@
-Routing Fundamentals
+# 05 - Routing
 
 This section documents the routing concepts studied as part of Cisco networking.
 
-1. What Is Routing?
+## Contents
 
-Routing is the process of selecting a path for IP packets to travel from one network to another.
+- [What Is Routing](#what-is-routing)
+- [What Is a Router](#what-is-a-router)
+- [Routing Table](#routing-table)
+- [Static and Dynamic Routing](#static-and-dynamic-routing)
+- [Basic Router Interface Configuration](#basic-router-interface-configuration)
+- [Key Takeaways](#key-takeaways)
 
-Routers use routing tables to determine where packets should be forwarded.
+---
 
-2. What Is a Router?
+## What Is Routing
 
-A router connects different IP networks and forwards packets between them.
+Routing is the process of selecting a path for IP packets to travel from one network to another. Routers use routing tables to determine where packets should be forwarded.
 
-Each router interface connected to a network normally requires an appropriate IP address and subnet mask.
+---
 
-3. Routing Table
+## What Is a Router
 
-A routing table contains information that helps a router determine how to forward packets toward their destinations.
+A router connects different IP networks and forwards packets between them. Each router interface connected to a network normally requires an appropriate IP address and subnet mask.
 
-A router may use:
+---
+
+## Routing Table
+
+A routing table contains information that helps a router determine how to forward packets toward their destinations. A router may use:
 
 - Directly connected routes
 - Static routes
 - Routes learned through dynamic routing protocols
 
-4. Static and Dynamic Routing
+---
 
-Type| Description
-Static Routing| Routes are manually configured by an administrator.
-Dynamic Routing| Routers learn and update routes using routing protocols.
+## Static and Dynamic Routing
 
-5. Basic Router Interface Configuration
+| Type            | Description |
+|-----------------|-------------|
+| Static Routing  | Routes are manually configured by an administrator. |
+| Dynamic Routing | Routers learn and update routes using routing protocols. |
 
-Example:
+---
 
+## Basic Router Interface Configuration
+
+```text
 enable
 configure terminal
 interface gigabitEthernet 0/0
@@ -41,18 +54,21 @@ ip address 192.168.1.1 255.255.255.0
 no shutdown
 exit
 end
+```
 
 This example assigns an IPv4 address to a router interface and enables it.
 
-The interface name and addressing must match the actual network topology.
+> **Note:** The interface name and addressing must match the actual network topology.
 
-6. Important Notes
+---
+
+## Key Takeaways
 
 - Routing allows communication between different IP networks.
 - A router uses its routing table to select a forwarding path.
 - Static routes are configured manually.
 - Dynamic routing protocols allow routers to exchange routing information.
 
-Status
+---
 
-In progress.
+Part of My-Note. Personal technical knowledge base, continuously updated.
