@@ -1,74 +1,72 @@
-Notes
+# Notes
 
 This section contains short technical notes, useful observations, and quick references collected during learning and practical work.
 
 The goal is to preserve useful information that can be reviewed quickly without creating a full research document, lab, or project.
 
-What Belongs Here?
+## What Belongs Here
 
-- Short technical explanations.
-- Useful commands and their purposes.
-- Important configuration details.
-- Quick references and reminders.
-- Small discoveries made during research or practice.
-- Lessons that are useful to revisit later.
+- Short technical explanations
+- Useful commands and their purposes
+- Important configuration details
+- Quick references and reminders
+- Small discoveries made during research or practice
+- Lessons that are useful to revisit later
 
-Directory Structure
+## Directory Structure
 
 Keep short notes directly in this section when practical. Create a separate directory for a topic when the notes become too large or need supporting files.
 
+```text
 Notes/
 ├── README.md
 ├── Topic-Name.md
 └── Related-Topic/
     └── README.md
+```
 
 Use descriptive filenames that make notes easy to find.
 
-Note Structure
+## Note Structure
 
 Use the following structure when it fits the topic.
 
-1. Topic
+1. **Topic**
 
-Give the note a clear, descriptive title.
+   Give the note a clear, descriptive title.
 
-2. Summary
+2. **Summary**
 
-Explain the concept or observation briefly in your own words.
+   Explain the concept or observation briefly in your own words.
 
-3. Key Points
+3. **Key Points**
 
-List the most important details to remember.
+   List the most important details to remember.
 
-4. Examples
+4. **Examples**
 
-Include a short command, configuration example, or practical illustration when useful.
+   Include a short command, configuration example, or practical illustration when useful. Explain what the example does.
 
-Explain what the example does.
+5. **Personal Observations**
 
-5. Personal Observations
+   Record useful details discovered through practice or further investigation. Clearly distinguish personal observations from information taken from external sources.
 
-Record useful details discovered through practice or further investigation.
+6. **References**
 
-Clearly distinguish personal observations from information taken from external sources.
+   Include links to relevant documentation or other sources when applicable.
 
-6. References
-
-Include links to relevant documentation or other sources when applicable.
-
-Documentation Guidelines
+## Documentation Guidelines
 
 - Keep notes concise and focused.
 - Use clear titles and filenames.
 - Explain technical terms when necessary.
 - Verify commands and configurations before presenting them as tested.
 - Label untested examples when appropriate.
-- Move extensive research into "Research/".
-- Document complete practical exercises in "Labs/".
-- Avoid duplicating material already documented in "Linux/", "Networking/", or "Cisco/".
+- Move extensive research into [Research](../Research/).
+- Document complete practical exercises in [Labs](../Labs/).
+- Avoid duplicating material already documented in [Linux](../../Linux/), [Networking](../../Networking/), or [Cisco](../../Cisco/).
 - Link to existing documentation when it provides more detail.
 
-Status
+---
 
-Actively maintained.
+Part of My-Note. Personal technical knowledge base, continuously updated.
