@@ -1,23 +1,24 @@
-Projects
+# Projects
 
 This section documents technical projects developed or implemented as part of personal learning, practical experience, or skill development.
 
 The goal is to record project objectives, design decisions, implementation details, challenges, and results.
 
-What Belongs Here?
+## What Belongs Here
 
-- Network infrastructure projects.
-- Linux and Windows Server deployments.
-- Virtualization and homelab infrastructure.
-- Automation scripts and tools.
-- Web development and technical services.
-- Cybersecurity projects in authorized environments.
-- Projects that combine multiple technologies.
+- Network infrastructure projects
+- Linux and Windows Server deployments
+- Virtualization and homelab infrastructure
+- Automation scripts and tools
+- Web development and technical services
+- Cybersecurity projects in authorized environments
+- Projects that combine multiple technologies
 
-Directory Structure
+## Directory Structure
 
 Create a separate directory for each project.
 
+```text
 Projects/
 ├── README.md
 └── Project-Name/
@@ -26,70 +27,69 @@ Projects/
     ├── images/
     ├── configs/
     └── scripts/
+```
 
 Create additional directories only when they are useful.
 
-- "README.md": Project overview and main documentation.
-- "docs/": Supporting technical documents.
-- "images/": Screenshots, diagrams, and other relevant images.
-- "configs/": Configuration files with sensitive information removed.
-- "scripts/": Scripts developed for the project.
+| Item         | Contents |
+|--------------|----------|
+| `README.md`  | Project overview and main documentation |
+| `docs/`      | Supporting technical documents |
+| `images/`    | Screenshots, diagrams, and other relevant images |
+| `configs/`   | Configuration files with sensitive information removed |
+| `scripts/`   | Scripts developed for the project |
 
-Project Documentation Template
+## Project Documentation Template
 
-1. Project Overview
+1. **Project Overview**
 
-Describe the project, its purpose, and the problem it addresses.
+   Describe the project, its purpose, and the problem it addresses.
 
-2. Objectives
+2. **Objectives**
 
-List the intended goals and expected outcomes.
+   List the intended goals and expected outcomes.
 
-3. Scope
+3. **Scope**
 
-Explain what is included in the project and what is outside its scope.
+   Explain what is included in the project and what is outside its scope.
 
-4. Technologies and Tools
+4. **Technologies and Tools**
 
-List the technologies, operating systems, software, and tools actually used.
+   List the technologies, operating systems, software, and tools actually used.
 
-5. Architecture and Design
+5. **Architecture and Design**
 
-Explain how the main components work together.
+   Explain how the main components work together. Include diagrams when they help clarify the design.
 
-Include diagrams when they help clarify the design.
+6. **Environment and Requirements**
 
-6. Environment and Requirements
+   Document the hardware, software, dependencies, and other requirements.
 
-Document the hardware, software, dependencies, and other requirements.
+7. **Implementation**
 
-7. Implementation
+   Describe the implementation process and important technical decisions. Include relevant commands, configurations, and code examples when appropriate.
 
-Describe the implementation process and important technical decisions.
+8. **Testing and Verification**
 
-Include relevant commands, configurations, and code examples when appropriate.
+   Explain how the project was tested and how its functionality was verified.
 
-8. Testing and Verification
+9. **Challenges and Solutions**
 
-Explain how the project was tested and how its functionality was verified.
+   Document significant problems encountered and how they were investigated or resolved.
 
-9. Challenges and Solutions
+10. **Results**
 
-Document significant problems encountered and how they were investigated or resolved.
+    Describe the current state of the project and which objectives have been achieved.
 
-10. Results
+11. **Future Improvements**
 
-Describe the current state of the project and which objectives have been achieved.
+    List realistic improvements, unfinished features, or possible next steps.
 
-11. Future Improvements
+12. **References**
 
-List realistic improvements, unfinished features, or possible next steps.
+    Link to relevant documentation, research notes, labs, and external resources.
 
-12. References
-
-Link to relevant documentation, research notes, labs, and external resources.
-
-Project Guidelines
+## Project Guidelines
 
 - Document the actual implementation and current project status.
 - Do not describe planned features as completed.
@@ -99,6 +99,6 @@ Project Guidelines
 - Link to related documentation rather than duplicating it.
 - Update the README as the project evolves.
 
-Status
+---
 
-Actively maintained.
+Part of My-Note. Personal technical knowledge base, continuously updated.
