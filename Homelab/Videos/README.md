@@ -1,82 +1,75 @@
-Videos
+# Videos
 
 This section documents useful educational videos related to IT, networking, system administration, cybersecurity, and other technical subjects.
 
 The goal is to preserve important lessons, useful references, and personal takeaways from educational content.
 
-What Belongs Here?
+## What Belongs Here
 
-- Technical tutorials.
-- Conference talks and technical presentations.
-- Educational demonstrations.
-- Useful lectures and recorded training sessions.
-- Videos that introduce concepts worth revisiting.
+- Technical tutorials
+- Conference talks and technical presentations
+- Educational demonstrations
+- Useful lectures and recorded training sessions
+- Videos that introduce concepts worth revisiting
 
-Directory Structure
+## Directory Structure
 
 Create a separate directory for each video worth documenting.
 
+```text
 Videos/
 ├── README.md
 └── Video-Topic/
     ├── README.md
     └── images/
+```
 
 Use a short, descriptive directory name based on the video's main topic.
 
-Video Documentation Template
+## Video Documentation Template
 
-Each video's "README.md" should include the following sections when relevant:
+Each video's `README.md` should include the following sections when relevant.
 
-1. Video Information
+1. **Video Information**
+   - Title:
+   - Creator / Channel:
+   - Source URL:
+   - Publication Date:
+   - Date Watched:
 
-- Title:
-- Creator / Channel:
-- Source URL:
-- Publication Date:
-- Date Watched:
+2. **Overview**
 
-2. Overview
+   Briefly describe the subject and purpose of the video.
 
-Briefly describe the subject and purpose of the video.
+3. **Key Topics**
 
-3. Key Topics
+   List the main concepts covered in the video.
 
-List the main concepts covered in the video.
+4. **Personal Notes**
 
-4. Personal Notes
+   Record the important points learned from the content in your own words.
 
-Record the important points learned from the content in your own words.
+5. **Commands and Examples**
 
-5. Commands and Examples
+   Document useful commands, configurations, or examples demonstrated in the video. Clearly distinguish between examples shown by the instructor and commands or configurations personally tested.
 
-Document useful commands, configurations, or examples demonstrated in the video.
+6. **Practical Experiments**
 
-Clearly distinguish between examples shown by the instructor and commands or configurations personally tested.
+   Describe any related experiments performed independently. Link to a corresponding lab or project when appropriate.
 
-6. Practical Experiments
+7. **Questions and Follow-up**
 
-Describe any related experiments performed independently.
+   Record concepts that need further explanation, verification, or practice.
 
-Link to a corresponding lab or project when appropriate.
+8. **References**
 
-7. Questions and Follow-up
+   Include links to the original video and any additional sources used.
 
-Record concepts that need further explanation, verification, or practice.
+## Screenshots and Images
 
-8. References
+Store relevant screenshots in the video's `images/` directory. Use descriptive filenames and reference images from the README with relative paths. Only include images that help explain the material.
 
-Include links to the original video and any additional sources used.
-
-Screenshots and Images
-
-Store relevant screenshots in the video's "images/" directory.
-
-Use descriptive filenames and reference images from the README with relative paths.
-
-Only include images that help explain the material.
-
-Documentation Guidelines
+## Documentation Guidelines
 
 - Summarize the material in your own words.
 - Preserve the original source link.
@@ -85,6 +78,6 @@ Documentation Guidelines
 - Add only videos that provide useful technical knowledge or meaningful reference material.
 - Keep notes focused and avoid unnecessary repetition.
 
-Status
+---
 
-Actively maintained.
+Part of My-Note. Personal technical knowledge base, continuously updated.
