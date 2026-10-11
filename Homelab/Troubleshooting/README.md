@@ -1,98 +1,93 @@
-Troubleshooting
+# Troubleshooting
 
 This section documents technical problems, diagnostic procedures, solutions, and lessons learned while working with systems, networks, software, and hardware.
 
 The goal is to build a searchable record of real troubleshooting experience and make it easier to recognize and resolve similar problems in the future.
 
-What Belongs Here?
+## What Belongs Here
 
-- Linux and Windows errors.
-- Network connectivity problems.
-- Server configuration issues.
-- Hardware and software problems.
-- Virtual machine failures.
-- Service startup and configuration errors.
-- Unexpected system behavior.
-- Problems encountered during labs and projects.
+- Linux and Windows errors
+- Network connectivity problems
+- Server configuration issues
+- Hardware and software problems
+- Virtual machine failures
+- Service startup and configuration errors
+- Unexpected system behavior
+- Problems encountered during labs and projects
 
-Directory Structure
+## Directory Structure
 
 Create a separate directory for each significant troubleshooting case.
 
+```text
 Troubleshooting/
 ├── README.md
 └── Problem-Name/
     ├── README.md
     ├── images/
     └── logs/
+```
 
-Create "images/" and "logs/" only when needed.
+Create `images/` and `logs/` only when needed.
 
-- "README.md": Problem description, investigation, findings, and solution.
-- "images/": Relevant screenshots.
-- "logs/": Relevant log excerpts with sensitive information removed.
+| Item         | Contents |
+|--------------|----------|
+| `README.md`  | Problem description, investigation, findings, and solution |
+| `images/`    | Relevant screenshots |
+| `logs/`      | Relevant log excerpts with sensitive information removed |
 
-Troubleshooting Documentation Template
+## Troubleshooting Documentation Template
 
-1. Problem Summary
+1. **Problem Summary**
+   - Date:
+   - System or Device:
+   - Operating System / Version:
+   - Status: Investigating / Resolved / Unresolved
 
-Briefly describe the problem.
+   Briefly describe the problem.
 
-- Date:
-- System or Device:
-- Operating System / Version:
-- Status: Investigating / Resolved / Unresolved
+2. **Environment**
 
-2. Environment
+   Describe the relevant hardware, software, network configuration, and system setup.
 
-Describe the relevant hardware, software, network configuration, and system setup.
+3. **Symptoms**
 
-3. Symptoms
+   Record the observable symptoms, error messages, and unexpected behavior. Include the exact error message when useful.
 
-Record the observable symptoms, error messages, and unexpected behavior.
+4. **Initial Investigation**
 
-Include the exact error message when useful.
+   Describe the first checks performed and the information collected.
 
-4. Initial Investigation
+5. **Diagnostic Steps**
 
-Describe the first checks performed and the information collected.
+   Record each investigation step, including:
 
-5. Diagnostic Steps
+   - The command or test performed
+   - Why it was performed
+   - The observed result
+   - What the result suggested
 
-Record each investigation step, including:
+6. **Root Cause**
 
-- The command or test performed.
-- Why it was performed.
-- The observed result.
-- What the result suggested.
+   Document the cause if it has been identified and supported by evidence. If the cause is uncertain, explain what is known and what remains unconfirmed.
 
-6. Root Cause
+7. **Solution**
 
-Document the cause if it has been identified and supported by evidence.
+   Describe the changes or actions used to resolve the problem. Include relevant commands or configuration changes when appropriate.
 
-If the cause is uncertain, explain what is known and what remains unconfirmed.
+8. **Verification**
 
-7. Solution
+   Explain how the system was tested after the fix. Record whether the original problem disappeared and whether normal functionality was restored.
 
-Describe the changes or actions used to resolve the problem.
+9. **Lessons Learned**
 
-Include relevant commands or configuration changes when appropriate.
+   Summarize what the investigation taught you and what might help diagnose the same problem in the future.
 
-8. Verification
+10. **References**
 
-Explain how the system was tested after the fix.
+    Link to relevant documentation, official support pages, research notes, or related projects.
 
-Record whether the original problem disappeared and whether normal functionality was restored.
-
-9. Lessons Learned
-
-Summarize what the investigation taught you and what might help diagnose the same problem in the future.
-
-10. References
-
-Link to relevant documentation, official support pages, research notes, or related projects.
-
-Troubleshooting Guidelines
+## Troubleshooting Guidelines
 
 - Record actual observations rather than assumptions.
 - Change one relevant variable at a time when practical.
@@ -103,6 +98,6 @@ Troubleshooting Guidelines
 - Document unresolved problems when the investigation itself provides useful lessons.
 - Link to related labs or projects instead of duplicating their documentation.
 
-Status
+---
 
-Actively maintained.
+Part of My-Note. Personal technical knowledge base, continuously updated.
