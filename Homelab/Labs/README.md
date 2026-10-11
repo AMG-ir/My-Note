@@ -1,104 +1,91 @@
-Labs
+# Labs
 
 This section documents practical technical exercises performed in controlled environments.
 
 The goal is to apply theoretical knowledge, practice technical skills, troubleshoot problems, and record the results of hands-on experiments.
 
-What Belongs Here?
+## What Belongs Here
 
-- Networking exercises.
-- Linux and Windows Server experiments.
-- Virtualization exercises.
-- Cisco Packet Tracer labs.
-- System administration practice.
-- Cybersecurity exercises in authorized environments.
-- Small experiments designed to understand specific technical concepts.
+- Networking exercises
+- Linux and Windows Server experiments
+- Virtualization exercises
+- Cisco Packet Tracer labs
+- System administration practice
+- Cybersecurity exercises in authorized environments
+- Small experiments designed to understand specific technical concepts
 
-Directory Structure
+## Directory Structure
 
 Create a separate directory for each lab.
 
+```text
 Labs/
 ├── README.md
 └── Lab-Topic/
     ├── README.md
     ├── images/
     └── configs/
+```
 
-Create "images/" and "configs/" only when needed.
+Create `images/` and `configs/` only when needed.
 
-- "README.md": Lab objective, setup, steps, and results.
-- "images/": Screenshots and diagrams.
-- "configs/": Relevant configuration files with sensitive information removed.
+| Item         | Contents |
+|--------------|----------|
+| `README.md`  | Lab objective, setup, steps, and results |
+| `images/`    | Screenshots and diagrams |
+| `configs/`   | Relevant configuration files with sensitive information removed |
 
-Lab Documentation Template
+## Lab Documentation Template
 
-1. Lab Overview
+1. **Lab Overview**
+   - Lab Name:
+   - Date:
+   - Category:
+   - Status: Planned / In Progress / Completed
 
-- Lab Name:
-- Date:
-- Category:
-- Status: Planned / In Progress / Completed
+   Briefly describe what the lab is about.
 
-Briefly describe what the lab is about.
+2. **Objectives**
 
-2. Objectives
+   List the skills or concepts the lab is intended to practice.
 
-List the skills or concepts the lab is intended to practice.
+3. **Environment**
 
-3. Environment
+   Document the environment used, such as operating systems, virtual machines, network simulators, hardware or software tools, and relevant software versions.
 
-Document the environment used, such as:
+4. **Requirements**
 
-- Operating systems.
-- Virtual machines.
-- Network simulators.
-- Hardware or software tools.
-- Relevant software versions.
+   List the tools, configurations, and prerequisites needed to perform the lab.
 
-4. Requirements
+5. **Topology and Setup**
 
-List the tools, configurations, and prerequisites needed to perform the lab.
+   Describe the network topology or system setup. Include a diagram or screenshot when it helps explain the environment.
 
-5. Topology and Setup
+6. **Procedure**
 
-Describe the network topology or system setup.
+   Record the steps performed during the lab. Include relevant commands and configuration examples. Explain the purpose of important steps rather than listing commands without context.
 
-Include a diagram or screenshot when it helps explain the environment.
+7. **Verification**
 
-6. Procedure
+   Explain how the configuration or result was tested. Include command output or screenshots when useful.
 
-Record the steps performed during the lab.
+8. **Results**
 
-Include relevant commands and configuration examples.
+   Describe what happened and whether the objectives were achieved.
 
-Explain the purpose of important steps rather than listing commands without context.
+9. **Problems and Troubleshooting**
 
-7. Verification
+   Document errors, unexpected behavior, and the steps taken to investigate them. If the cause remains unknown, state that instead of guessing.
 
-Explain how the configuration or result was tested.
+10. **Lessons Learned**
 
-Include command output or screenshots when useful.
+    Summarize what was learned and what could be improved in a future attempt.
 
-8. Results
+11. **References**
 
-Describe what happened and whether the objectives were achieved.
+    Link to relevant documentation, research notes, or other resources.
 
-9. Problems and Troubleshooting
-
-Document errors, unexpected behavior, and the steps taken to investigate them.
-
-If the cause remains unknown, state that instead of guessing.
-
-10. Lessons Learned
-
-Summarize what was learned and what could be improved in a future attempt.
-
-11. References
-
-Link to relevant documentation, research notes, or other resources.
-
-Lab Guidelines
+## Lab Guidelines
 
 - Document only experiments actually performed.
 - Distinguish completed labs from planned exercises.
@@ -108,6 +95,6 @@ Lab Guidelines
 - Keep instructions clear enough to reproduce the lab.
 - Link to related research or project documentation instead of duplicating it.
 
-Status
+---
 
-Actively maintained.
+Part of My-Note. Personal technical knowledge base, continuously updated.
