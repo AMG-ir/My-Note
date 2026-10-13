@@ -19,6 +19,7 @@ The goal is to investigate technical questions, compare different approaches, un
 - [security.txt](Security-TXT/README.md) — finding security contacts and vulnerability-disclosure instructions.
 - [Rate Limiting](Rate-Limiting/README.md) — controlling request rates on websites and APIs.
 - [IDS vs. IPS](IDS-vs-IPS/README.md) — comparing detection and prevention approaches.
+- [SSH Key Authentication](SSH-Key-Authentication/README.md) — understanding public-key authentication for SSH connections.
 
 ## Directory Structure
 
