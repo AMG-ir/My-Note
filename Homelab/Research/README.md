@@ -17,6 +17,7 @@ The goal is to investigate technical questions, compare different approaches, un
 
 - [Subresource Integrity (SRI)](Subresource-Integrity-SRI/README.md) — checking integrity of third-party scripts and stylesheets.
 - [security.txt](Security-TXT/README.md) — finding security contacts and vulnerability-disclosure instructions.
+- [Rate Limiting](Rate-Limiting/README.md) — controlling request rates on websites and APIs.
 - [IDS vs. IPS](IDS-vs-IPS/README.md) — comparing detection and prevention approaches.
 
 ## Directory Structure
