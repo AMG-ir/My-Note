@@ -283,6 +283,123 @@ Blocking must be evaluated separately from alerting. A suitable IPS configuratio
 
 ---
 
+## Custom Rule Examples
+
+The examples below are starting points for a controlled lab, not a guarantee of accurate scan classification. Test the alert-only rule first and tune the threshold for the lab traffic.
+
+### Example 1: Alert on Repeated TCP SYN Packets
+
+Save this rule in a custom rule file such as `local.rules`:
+
+```text
+alert tcp any any -> $HOME_NET any (
+    msg:"Possible TCP SYN scan - repeated SYN packets";
+    flags:S;
+    flow:stateless;
+    detection_filter:track by_src, count 20, seconds 10;
+    sid:1000002;
+    rev:1;
+)
+```
+
+**How it works**
+
+- `alert` generates an alert; it does not block traffic.
+- `tcp` limits the rule to TCP traffic.
+- `any any` matches any source address and source port.
+- `$HOME_NET any` targets any port on the protected network defined in the Snort configuration.
+- `flags:S` matches TCP packets with the SYN flag set.
+- `flow:stateless` allows the rule to inspect packets without requiring an established TCP session.
+- `detection_filter` counts matching packets by source IP and triggers an event after the configured rate threshold is exceeded.
+- `sid` is the local rule identifier; `rev` is the revision number.
+
+**Limitation:** Repeated SYN packets do not prove that a port scan is occurring. Normal applications, retries, or other traffic may trigger this rule. The threshold is an example and must be tuned.
+
+### Example 2: Validate the Rule and Start Alerting
+
+First, check the configuration:
+
+```bash
+sudo snort -T -c /etc/snort/snort.lua -R /etc/snort/rules/local.rules
+```
+
+Then listen on the interface connected to the authorized lab network:
+
+```bash
+sudo snort -c /etc/snort/snort.lua \\
+  -R /etc/snort/rules/local.rules \\
+  -i eth0 -A alert_fast
+```
+
+Replace `eth0` and the configuration/rule paths with the actual values on your system. Confirm that `$HOME_NET` in the configuration includes the lab target network. These commands assume Snort is installed directly on Linux; a container may use different paths and interface names.
+
+### Example 3: Inspect a Saved Packet Capture
+
+If a PCAP file was captured from an authorized lab, Snort can inspect it offline:
+
+```bash
+sudo snort -c /etc/snort/snort.lua \\
+  -R /etc/snort/rules/local.rules \\
+  -r ./lab-traffic.pcap -A alert_fast
+```
+
+This reads an existing capture file and evaluates its packets against the loaded rules. Replace `./lab-traffic.pcap` with the actual file path. Offline PCAP inspection can test detection logic, but it cannot demonstrate that live traffic was blocked.
+
+### Example 4: Controlled Scan Test
+
+Only run scans against a system you own or have explicit permission to test. From a separate lab machine, a limited TCP connect scan can be used to generate traffic:
+
+```bash
+nmap -sT -p 20-100 <LAB_TARGET_IP>
+```
+
+Replace `<LAB_TARGET_IP>` with the IP address of your own lab target. Keep the target and Snort sensor on a network path where the sensor can actually observe the traffic.
+
+During the test:
+
+1. Start Snort with the alert rule loaded.
+2. Run the limited scan from the separate lab machine.
+3. Review the Snort alert output.
+4. Capture the same traffic in Wireshark if possible.
+5. Compare timestamps, source/destination addresses, and TCP flags.
+6. Record whether the rule triggered and whether unrelated traffic also matched.
+
+A rule alert is evidence that its conditions matched; it is not, by itself, proof that every scan was detected.
+
+### Example 5: Prevention Rule — Inline IPS Only
+
+After the alert-only rule has been reviewed and tuned, the action can be changed to `drop` for a controlled inline IPS test:
+
+```text
+drop tcp any any -> $HOME_NET any (
+    msg:"Possible TCP SYN scan - drop matching packets";
+    flags:S;
+    flow:stateless;
+    detection_filter:track by_src, count 20, seconds 10;
+    sid:1000003;
+    rev:1;
+)
+```
+
+**Important:** A `drop` action only prevents matching packets from passing when Snort is correctly configured in an inline IPS path that can enforce the action. Running Snort as a passive IDS or reading a PCAP file does not block the original live traffic. This example drops matching packets after the rate threshold is exceeded; it does not necessarily block the source IP for all protocols or all future traffic.
+
+Do not switch to a blocking rule on a production network without an authorized test plan and a way to restore connectivity. Verify blocking separately from alert generation.
+
+## Container Deployment Notes
+
+A containerized Snort setup needs access to the relevant network traffic, the Snort configuration, and the custom rules. The exact image name, paths, interface, and startup command depend on how the container image was built.
+
+Before starting the container:
+
+1. Confirm the image contains Snort 3 and check its version.
+2. Make the configuration and custom rules available inside the container, preferably as read-only mounts when they do not need to be changed at runtime.
+3. Ensure the container can observe the lab traffic. A container on an ordinary isolated bridge network may not see traffic between other machines.
+4. Grant only the network capabilities required by the selected capture or inline mode.
+5. Start with alert-only monitoring and confirm visibility before attempting inline prevention.
+6. Keep the test network isolated and avoid exposing the Snort management interface unnecessarily.
+
+For a container, run the equivalent of the validation and listening commands from inside the container using paths and interface names that actually exist there. Do not copy a host interface name into the container command without checking it first.
+
 ## Troubleshooting Checklist
 
 When Snort does not behave as expected, investigate the following areas:
