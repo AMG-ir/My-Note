@@ -13,6 +13,12 @@ The goal is to investigate technical questions, compare different approaches, un
 - Findings gathered from multiple sources
 - Questions that require deeper technical understanding
 
+## Research Topics
+
+- [Subresource Integrity (SRI)](Subresource-Integrity-SRI/README.md) — checking integrity of third-party scripts and stylesheets.
+- [security.txt](Security-TXT/README.md) — finding security contacts and vulnerability-disclosure instructions.
+- [IDS vs. IPS](IDS-vs-IPS/README.md) — comparing detection and prevention approaches.
+
 ## Directory Structure
 
 Create a separate directory for each substantial research topic.
