@@ -43,7 +43,7 @@ Experimented with Windows Firewall rules and observed their effects on scan resu
 
 ### Scan Detection Research
 
-Investigated methods for identifying port scans and explored the role of IDS/IPS solutions, including Snort. See the related lab: [Snort 3 Network Scan Detection](../Network-Monitoring/Snort-3/).
+Investigated methods for identifying port scans and explored the role of IDS/IPS solutions, including Snort. See the [IDS vs. IPS research notes](../../Research/IDS-vs-IPS/README.md) for the conceptual comparison and the related lab: [Snort 3 Network Scan Detection](../Network-Monitoring/Snort-3/).
 
 ## Status
 
