@@ -20,6 +20,7 @@ The goal is to investigate technical questions, compare different approaches, un
 - [Rate Limiting](Rate-Limiting/README.md) — controlling request rates on websites and APIs.
 - [IDS vs. IPS](IDS-vs-IPS/README.md) — comparing detection and prevention approaches.
 - [SSH Key Authentication](SSH-Key-Authentication/README.md) — understanding public-key authentication for SSH connections.
+- [CPU Hyper-Threading](CPU-Hyper-Threading/README.md) — physical cores, logical CPUs, and simultaneous multithreading.
 
 ## Directory Structure
 
