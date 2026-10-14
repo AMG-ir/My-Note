@@ -23,6 +23,7 @@ The goal is to investigate technical questions, compare different approaches, un
 - [CPU Hyper-Threading](CPU-Hyper-Threading/README.md) — physical cores, logical CPUs, and simultaneous multithreading.
 - [BIOS vs. UEFI](BIOS-vs-UEFI/README.md) — firmware interfaces, boot flow, POST, and Secure Boot.
 - [MBR vs. GPT](MBR-vs-GPT/README.md) — disk partition-table formats and their relationship to boot modes.
+- [Initramfs](Initramfs/README.md) — early userspace and preparing the Linux root filesystem during boot.
 
 ## Directory Structure
 
