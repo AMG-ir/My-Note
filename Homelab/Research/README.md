@@ -21,6 +21,8 @@ The goal is to investigate technical questions, compare different approaches, un
 - [IDS vs. IPS](IDS-vs-IPS/README.md) — comparing detection and prevention approaches.
 - [SSH Key Authentication](SSH-Key-Authentication/README.md) — understanding public-key authentication for SSH connections.
 - [CPU Hyper-Threading](CPU-Hyper-Threading/README.md) — physical cores, logical CPUs, and simultaneous multithreading.
+- [BIOS vs. UEFI](BIOS-vs-UEFI/README.md) — firmware interfaces, boot flow, POST, and Secure Boot.
+- [MBR vs. GPT](MBR-vs-GPT/README.md) — disk partition-table formats and their relationship to boot modes.
 
 ## Directory Structure
 
