@@ -24,6 +24,7 @@ The goal is to investigate technical questions, compare different approaches, un
 - [BIOS vs. UEFI](BIOS-vs-UEFI/README.md) — firmware interfaces, boot flow, POST, and Secure Boot.
 - [MBR vs. GPT](MBR-vs-GPT/README.md) — disk partition-table formats and their relationship to boot modes.
 - [Initramfs](Initramfs/README.md) — early userspace and preparing the Linux root filesystem during boot.
+- [Linux Runlevels and systemd Targets](Linux-Runlevels-and-systemd-Targets/README.md) — traditional runlevels, modern systemd targets, and changing the system's operating state.
 
 ## Directory Structure
 
