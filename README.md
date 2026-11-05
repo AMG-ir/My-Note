@@ -41,6 +41,10 @@ Practical experiments and projects involving areas such as Windows Server, virtu
 
 The content of this repository reflects my actual learning and hands-on experience. Topics, commands, and concepts that I have not yet studied or practiced are not presented as completed knowledge.
 
+## License
+
+The notes in this repository are licensed under [Creative Commons Attribution 4.0 International (CC BY 4.0)](LICENSE). You may share and adapt them, including commercially, as long as you give appropriate credit to Matin Ghorbani and indicate if changes were made. Commands or snippets taken from other sources remain under their own licenses.
+
 ## Status
 
 Actively maintained.
