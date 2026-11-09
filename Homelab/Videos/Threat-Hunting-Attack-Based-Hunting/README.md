@@ -1,5 +1,7 @@
 # Threat Hunting — Attack-Based Hunting (ABH)
 
+![Attack-Based vs Data-Based Threat Hunting: two paths leading to anomalies](images/attack-vs-data-based-hunting.svg)
+
 ## Video Information
 
 - **Topic:** Attack-Based Hunting, worked example: hunting for malicious local account creation

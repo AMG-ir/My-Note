@@ -1,5 +1,7 @@
 # Threat Hunting — Data-Based Hunting (DBH)
 
+![Attack-Based vs Data-Based Threat Hunting: two paths leading to anomalies](images/attack-vs-data-based-hunting.svg)
+
 ## Video Information
 
 - **Topic:** Data-Based Hunting, worked example: hunting in process creation logs (Windows Event ID 4688)

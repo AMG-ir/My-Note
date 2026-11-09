@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="840" viewBox="0 0 1600 840" role="img" aria-labelledby="t d">
+  <title id="t">Attack-Based vs Data-Based Threat Hunting</title>
+  <desc id="d">Two paths, attack-based hunting and data-based hunting, both leading to anomalies worth investigating.</desc>
+  <defs>
+    <radialGradient id="g1" cx="15%" cy="0%" r="60%"><stop offset="0" stop-color="#16406d"/><stop offset="1" stop-color="#16406d" stop-opacity="0"/></radialGradient>
+    <radialGradient id="g2" cx="100%" cy="100%" r="60%"><stop offset="0" stop-color="#0f2f52"/><stop offset="1" stop-color="#0f2f52" stop-opacity="0"/></radialGradient>
+    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
+      <path d="M40 0H0V40" fill="none" stroke="#78aadc" stroke-opacity="0.07" stroke-width="1"/>
+    </pattern>
+    <marker id="aO" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11 Z" fill="#ffa64d"/></marker>
+    <marker id="aG" markerWidth="12" markerHeight="12" refX="9" refY="6" orient="auto"><path d="M1,1 L10,6 L1,11 Z" fill="#5ec9a8"/></marker>
+  </defs>
+
+  <rect width="1600" height="840" fill="#0a1a2f"/>
+  <rect width="1600" height="840" fill="url(#g1)"/>
+  <rect width="1600" height="840" fill="url(#g2)"/>
+  <rect width="1600" height="840" fill="url(#grid)"/>
+
+  <g font-family="Segoe UI, Helvetica, Arial, sans-serif" font-weight="700">
+    <text x="90" y="118" font-size="22" letter-spacing="4" fill="#7fb6ee">THREAT HUNTING · STUDY NOTES</text>
+    <text x="90" y="215" font-size="72" fill="#ffa64d">Attack-Based <tspan fill="#ffffff">vs</tspan> <tspan fill="#5ec9a8">Data-Based</tspan></text>
+    <text x="90" y="300" font-size="72" fill="#ffffff">Threat Hunting</text>
+    <text x="90" y="355" font-size="28" font-weight="400" fill="#b9cbe0">Two ways to start hunting, one place to arrive</text>
+
+    <g font-family="Consolas, Menlo, monospace" font-size="20" font-weight="400" fill="#9fd0ff">
+      <rect x="1258" y="68" width="82" height="38" rx="19" fill="#143c64" fill-opacity="0.55" stroke="#3f78b3" stroke-width="1.5"/>
+      <text x="1299" y="94" text-anchor="middle">4720</text>
+      <rect x="1350" y="68" width="82" height="38" rx="19" fill="#143c64" fill-opacity="0.55" stroke="#3f78b3" stroke-width="1.5"/>
+      <text x="1391" y="94" text-anchor="middle">4732</text>
+      <rect x="1442" y="68" width="82" height="38" rx="19" fill="#143c64" fill-opacity="0.55" stroke="#3f78b3" stroke-width="1.5"/>
+      <text x="1483" y="94" text-anchor="middle">4688</text>
+    </g>
+  </g>
+
+  <g transform="translate(0,440)" font-family="Segoe UI, Helvetica, Arial, sans-serif" font-size="22" font-weight="700">
+    <text x="90" y="86" fill="#ffa64d" font-size="20" letter-spacing="3">ABH · FROM THE ATTACK</text>
+    <rect x="90" y="108" width="230" height="70" rx="14" fill="#2a2013" stroke="#ffa64d" stroke-width="2"/>
+    <text x="205" y="151" text-anchor="middle" fill="#ffd9ae">Known attack</text>
+    <line x1="322" y1="143" x2="378" y2="143" stroke="#ffa64d" stroke-width="3" marker-end="url(#aO)"/>
+    <rect x="384" y="108" width="230" height="70" rx="14" fill="#2a2013" stroke="#ffa64d" stroke-width="2"/>
+    <text x="499" y="151" text-anchor="middle" fill="#ffd9ae">Relationships</text>
+    <line x1="616" y1="143" x2="672" y2="143" stroke="#ffa64d" stroke-width="3" marker-end="url(#aO)"/>
+    <rect x="678" y="108" width="230" height="70" rx="14" fill="#2a2013" stroke="#ffa64d" stroke-width="2"/>
+    <text x="793" y="151" text-anchor="middle" fill="#ffd9ae">Behaviors</text>
+    <line x1="910" y1="143" x2="966" y2="143" stroke="#ffa64d" stroke-width="3" marker-end="url(#aO)"/>
+
+    <text x="90" y="262" fill="#5ec9a8" font-size="20" letter-spacing="3">DBH · FROM THE DATA</text>
+    <rect x="90" y="284" width="230" height="70" rx="14" fill="#102a25" stroke="#5ec9a8" stroke-width="2"/>
+    <text x="205" y="327" text-anchor="middle" fill="#bdf0df">Data source</text>
+    <line x1="322" y1="319" x2="378" y2="319" stroke="#5ec9a8" stroke-width="3" marker-end="url(#aG)"/>
+    <rect x="384" y="284" width="230" height="70" rx="14" fill="#102a25" stroke="#5ec9a8" stroke-width="2"/>
+    <text x="499" y="327" text-anchor="middle" fill="#bdf0df">Behaviors</text>
+    <line x1="616" y1="319" x2="672" y2="319" stroke="#5ec9a8" stroke-width="3" marker-end="url(#aG)"/>
+    <rect x="678" y="284" width="230" height="70" rx="14" fill="#102a25" stroke="#5ec9a8" stroke-width="2"/>
+    <text x="793" y="327" text-anchor="middle" fill="#bdf0df">Relationships</text>
+    <line x1="910" y1="319" x2="966" y2="319" stroke="#5ec9a8" stroke-width="3" marker-end="url(#aG)"/>
+
+    <path d="M 972 143 C 1040 143, 1040 231, 1100 231" fill="none" stroke="#ffa64d" stroke-width="3"/>
+    <path d="M 972 319 C 1040 319, 1040 231, 1100 231" fill="none" stroke="#5ec9a8" stroke-width="3"/>
+    <circle cx="1100" cy="231" r="7" fill="#fff"/>
+    <line x1="1107" y1="231" x2="1170" y2="231" stroke="#fff" stroke-width="3"/>
+
+    <rect x="1176" y="176" width="340" height="110" rx="18" fill="#12315a" stroke="#7fb6ee" stroke-width="2.5"/>
+    <text x="1346" y="224" text-anchor="middle" font-size="30" fill="#fff">Anomalies</text>
+    <text x="1346" y="260" text-anchor="middle" font-size="20" fill="#9fd0ff" font-weight="400">worth investigating</text>
+  </g>
+</svg>
