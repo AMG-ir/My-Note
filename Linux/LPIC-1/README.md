@@ -24,7 +24,7 @@ Notes from my Linux system administration studies for the LPIC-1 certification, 
 
 - Each section contains a README with commands, examples, and key takeaways.
 - Content is limited to what I have actually studied and practiced.
-- LPIC-2 notes will be added separately as I study them.
+- LPIC-2 notes are in [LPIC-2](../LPIC-2/) and are added as I study them.
 
 ## Status
 
